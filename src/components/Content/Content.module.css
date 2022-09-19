@@ -1,0 +1,46 @@
+.content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.topImage {
+    width: 100%;
+    border-radius: 10px;
+}
+.user {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    gap: 30px;
+}
+.avatar {
+    width: 100px;
+    border-radius: 10px;
+}
+.myPostInput {
+    width: 100%;
+}
+.newPost {
+
+    display: flex;
+    flex-direction: column;
+}
+.button {
+    width: 100px;
+    height: 2rem;
+    background: greenyellow;
+}
+.myPosts{
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+.avatarSmall {
+    width: 50px;
+    border-radius: 30px;
+}

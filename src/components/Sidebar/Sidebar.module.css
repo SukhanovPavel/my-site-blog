@@ -1,0 +1,11 @@
+.nav {
+    background: greenyellow;
+    border-radius: 10px;
+    width: 20%;
+    color: gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding-top: 15px;
+}
