@@ -1,0 +1,15 @@
+.myPostInput {
+    width: 100%;
+}
+.newPost {
+
+    display: flex;
+    flex-direction: column;
+}
+.button {
+    margin-top: 7px;
+    border-radius: 5px;
+    width: 100px;
+    height: 2rem;
+    background: rgb(47, 172, 255);
+}

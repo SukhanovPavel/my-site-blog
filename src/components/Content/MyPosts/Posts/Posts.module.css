@@ -1,0 +1,14 @@
+.myPosts{
+    width: 100%;
+    margin-top: 30px;
+}
+.itemPost {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.avatarSmall {
+    width: 50px;
+    border-radius: 30px;
+}
