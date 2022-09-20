@@ -1,8 +1,11 @@
 .header {
-    background: greenyellow;
+    background: rgb(47, 172, 255);
     border-radius: 10px;
 }
 
 .img {
     width: 100px;
+    background: rgb(47, 172, 255);
+    color: rgb(47, 172, 255);
+    border-radius: 10px;
 }

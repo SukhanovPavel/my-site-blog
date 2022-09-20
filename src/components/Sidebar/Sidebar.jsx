@@ -5,11 +5,11 @@ import styles from "./Sidebar.module.css";
 const Sidebar = () => {
     return(
             <nav className={styles.nav}>
-                <div>Profile</div>
-                <div>Messages</div>
-                <div>News</div>
-                <div>Music</div>
-                <div>Settings</div>
+                <div className={styles.menu}>Profile</div>
+                <div className={styles.menu}>Messages</div>
+                <div className={styles.menu}>News</div>
+                <div className={styles.menu}>Music</div>
+                <div className={styles.menu}>Settings</div>
             </nav>
         )
 }
