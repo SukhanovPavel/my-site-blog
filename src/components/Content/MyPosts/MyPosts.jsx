@@ -8,12 +8,12 @@ const MyPosts = () => {
             <div className={styles.myPostInput}>
                 <h3>My posts</h3>
                 <div className={styles.newPost}>
-                    <textarea value="What's new with you?" cols="40" rows="3"></textarea>
+                    <textarea placeholder="What's new with you?" rows="2"></textarea>
                     <button className={styles.button}>Send</button>
                 </div>
             </div>
-            <Posts message='Hi! How are yoy?'/>
-            <Posts message='It is my first post'/>
+            <Posts message='Hi! How are yoy?' likeCount='10'/>
+            <Posts message='It is my first post' likeCount='25'/>
         </div>
     )
 }
