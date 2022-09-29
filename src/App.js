@@ -10,16 +10,22 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 import styles from './App.module.css';
 
-function App() {
+const App = (props) => {
+  
   return (
+    
     <BrowserRouter>
       <div className={styles.app}>
+        
         <Header className={styles.header} />
+        
         <div className={styles.main}>
-          <Sidebar />
+          
+          <Sidebar sidebarFriends={props.sidebarFriends}/>
+          
           <Routes>
-            <Route element={<Content />} path="/profile" />
-            <Route element={<Dialogue />} path="/dialogues" />
+            <Route element={<Content posts={props.posts}/>} path="/profile" />
+            <Route element={<Dialogue users={props.dialogUsers} messages={props.messages}/>} path="/dialogues" />
             <Route element={<News />} path="/news" />
             <Route element={<Music />} path="/music" />
             <Route element={<Settings />} path="/settings" />

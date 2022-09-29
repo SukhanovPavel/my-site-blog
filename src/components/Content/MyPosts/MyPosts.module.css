@@ -13,3 +13,6 @@
     height: 2rem;
     background: rgb(47, 172, 255);
 }
+.textarea {
+    width: 50%;
+}

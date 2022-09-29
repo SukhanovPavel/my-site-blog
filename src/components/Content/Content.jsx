@@ -4,7 +4,8 @@ import User from "./User/User";
 
 import styles from "./Content.module.css"
 
-const Content = () => {
+const Content = (props) => {
+    console.log(props);
     return (
         <div className={styles.content}>
             <div>
@@ -15,7 +16,7 @@ const Content = () => {
                 </img>
             </div>
             <User />
-            <MyPosts />
+            <MyPosts posts={props.posts}/>
         </div>
     )
 }

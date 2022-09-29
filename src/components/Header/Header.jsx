@@ -8,7 +8,7 @@ const Header = () => {
             <img 
                 alt="img" 
                 className={styles.img} 
-                src="https://cdn.worldvectorlogo.com/logos/vk-1.svg"
+                src="https://simg.nicepng.com/png/small/232-2326770_icon-blogger-logo-now-creative-group-logo.png"
             />
         </div>
     )

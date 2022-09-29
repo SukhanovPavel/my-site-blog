@@ -1,11 +1,10 @@
 .header {
-    background: rgb(47, 172, 255);
+    background: rgb(0, 115, 255);
     border-radius: 10px;
+    box-shadow: 10px 5px 5px rgb(47, 172, 255);
 }
 
 .img {
     width: 100px;
-    background: rgb(47, 172, 255);
-    color: rgb(47, 172, 255);
-    border-radius: 10px;
+    border-radius: 50px;
 }

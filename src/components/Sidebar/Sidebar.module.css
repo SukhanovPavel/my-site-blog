@@ -4,7 +4,6 @@
     width: min-content;
     padding: 25px;
     height: 50vh;
-    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,4 +18,22 @@
 .active {
     text-decoration: none;
     color: purple;
+}
+.friends {
+    display: flex;
+    gap: 5px;
+    font-size: 11px;
+    margin-top: 75px;
+}
+.friend {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(79, 75, 75);
+}
+.userImage {
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    border: 1px solid rgb(79, 75, 75);
 }
