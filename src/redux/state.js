@@ -19,10 +19,15 @@ let state = {
     posts: [
         {id: 1, message: "Hi! How are you?", likeCount: 10},
         {id: 2, message: 'It is my first post', likeCount: 25},
-        {id: 2, message: 'Yoooooohoo', likeCount: 1000000},
+        {id: 3, message: 'Yoooooohoo', likeCount: 1000000},
     ]
 }
 
-
+export let addPost = (textArea) => {
+    let text = textArea.current.value;
+    state.posts.push({
+        id: 4, message: {text}, likeCount: 0
+    })
+}
 
 export default state;

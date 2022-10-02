@@ -1,22 +1,31 @@
 .user {
-    margin-top: 15px;
-    margin-right: 15px;
+    width: 100%;
     padding: 5px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     gap: 20px;
-    align-items: flex-end;
+    align-items: center;
 }
 .userName {
+    width: 90%;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     color: black;
     font-size: larger;
-    border-bottom: 1px solid rgb(47, 172, 255);
+    background: white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px rgb(47, 172, 255);
 }
 .activeName {
+    width: 100%;
     text-decoration: none;
     color: blue;
     font-size: larger;
-    border-bottom: 3px solid rgb(47, 172, 255);
+    background: white;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px rgb(47, 172, 255);
 }

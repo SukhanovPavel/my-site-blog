@@ -4,7 +4,7 @@ import styles from "./UserDialog.module.css";
 
 const UserDialog = (props) => {
     return (
-        <div>
+        <div className={styles.user}>
             <NavLink className={({ isActive }) => (isActive? styles.activeName : styles.userName)} to="/dialogues/1">{props.name}</NavLink>
         </div>
     )

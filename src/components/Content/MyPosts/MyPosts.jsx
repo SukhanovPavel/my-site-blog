@@ -1,14 +1,16 @@
+import React from "react";
 import Posts from "./Posts/Posts";
 
 import styles from "./MyPosts.module.css";
 
 
-
-
-
 const MyPosts = (props) => {
     
-    const post = props.posts.map( p => <Posts message={p.message} likeCount={p.likeCount}/>)
+    const post = props.posts.map( p => <Posts message={p.message} likeCount={p.likeCount} />)
+
+    let createPostRef = React.createRef();
+    
+    
 
     return (
         <div className={styles.myPostInput}>
@@ -16,11 +18,12 @@ const MyPosts = (props) => {
                 <h3>My posts</h3>
                 <div className={styles.newPost}>
                     <textarea 
-                        placeholder="What's new with you?" 
+                        ref={createPostRef}
+                        plaseholder="What's new with you?" 
                         rows="2"
                         className={styles.textarea}>
                     </textarea>
-                    <button className={styles.button}>Send</button>
+                    <button onClick={() => props.addPost(createPostRef)} className={styles.button}>Send</button>
                 </div>
             </div>
             {post}
