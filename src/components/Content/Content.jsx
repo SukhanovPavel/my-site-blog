@@ -16,7 +16,12 @@ const Content = (props) => {
                 </img>
             </div>
             <User />
-            <MyPosts posts={props.posts} addPost={props.addPost}/>
+            <MyPosts 
+                posts={props.posts} 
+                addPost={props.addPost}
+                newPostText={props.newPostText}
+                updateNewPostText={props.updateNewPostText}
+            />
         </div>
     )
 }

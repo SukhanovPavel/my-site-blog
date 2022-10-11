@@ -24,7 +24,7 @@ const App = (props) => {
           <Sidebar sidebarFriends={props.sidebarFriends}/>
           
           <Routes>
-            <Route element={<Content posts={props.posts} addPost={props.addPost}/>} path="/profile" />
+            <Route element={<Content posts={props.posts} addPost={props.addPost} newPostText={props.newPostText} updateNewPostText={props.updateNewPostText}/>} path="/profile" />
             <Route element={<Dialogue users={props.dialogUsers} messages={props.messages}/>} path="/dialogues" />
             <Route element={<News />} path="/news" />
             <Route element={<Music />} path="/music" />
