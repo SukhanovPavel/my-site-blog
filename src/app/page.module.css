@@ -82,10 +82,6 @@
   position: relative;
   padding: 4rem 0;
 }
-.centerDesc {
-  display: flex;
-  flex: 1 1 auto;
-}
 .center p {
   flex: 1;
   position: relative;
