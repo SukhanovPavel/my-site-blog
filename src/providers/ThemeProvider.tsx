@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, {ReactNode} from 'react'
 import { ThemeContext, themes } from '../contexts/ThemeContext'
 
 
@@ -17,7 +17,7 @@ export const getTheme = (): typeof themes[keyof typeof themes] => {
 }
 
 
-const ThemeProvider = ({ children }) => {
+const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [ theme, setTheme ] = React.useState(getTheme)
 
     React.useEffect(() => {
