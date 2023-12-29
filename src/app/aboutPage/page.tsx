@@ -15,7 +15,7 @@ const Page = () => {
                         <h2 className="text-xl font-bold">About Me</h2>
                     </CardHeader>
                     <CardContent>
-                        <Avatar size="large" src="/placeholder.svg?height=100&width=100" />
+                        {/*<Avatar size="large" src="/placeholder.svg?height=100&width=100" />*/}
                         <p>Hi, I m a blogger. This is my blog where I write about various topics that interest me.</p>
                     </CardContent>
                 </Card>
