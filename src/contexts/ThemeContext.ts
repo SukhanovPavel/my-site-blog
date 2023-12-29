@@ -6,4 +6,13 @@ export const themes = {
     light: 'light',
 }
 
-export const ThemeContext = React.createContext({})
+type ThemeContextType = {
+    theme: typeof themes[keyof typeof themes];
+    setTheme: (theme: typeof themes[keyof typeof themes]) => void;
+};
+
+
+export const ThemeContext = React.createContext<ThemeContextType>({
+    theme: themes.dark,
+    setTheme: () => {}
+});
