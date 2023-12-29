@@ -4,9 +4,13 @@ import {ThemeContext, themes} from "@/contexts/ThemeContext";
 
 export function ToggleTheme() {
 
+  type Props = {
+    theme: string;
+    setTheme: (string) => void;
+  }
   return (
       <ThemeContext.Consumer>
-        {({ theme, setTheme }) => (<div className="flex items-center space-x-4">
+        {({ theme, setTheme }: Props) => (<div className="flex items-center space-x-4">
             <Button
                 className="w-24 justify-center text-center font-normal "
                 variant={theme === themes.light ? "outline" : "default"}
