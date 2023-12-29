@@ -1,39 +1,33 @@
 'use client'
 import { Button } from "@/components/ui/button";
 import {ThemeContext, themes} from "@/contexts/ThemeContext";
+import { useContext } from 'react';
 
 export function ToggleTheme() {
+  const { theme, setTheme } = useContext(ThemeContext);
 
-  type Props = {
-    theme: string;
-    setTheme: (arg: string) => void;
-  }
   return (
-      <ThemeContext.Consumer>
-        {({ theme, setTheme }: Props) => (<div className="flex items-center space-x-4">
-            <Button
-                className="w-24 justify-center text-center font-normal "
-                variant={theme === themes.light ? "outline" : "default"}
-                onClick={() => setTheme(themes.light)}
-            >
-              <SunIcon className="mr-1 h-4 w-4 -translate-x-1" />
-              Light Theme
-            </Button>
-            <Button
-                className="w-24 justify-center text-center font-normal"
-                variant={theme === themes.dark ? "outline" : "default"}
-                onClick={() => setTheme(themes.dark)}
-            >
-              <MoonIcon
-                  className="mr-1 h-4 w-4 -translate-x-1"
-              />
-              Dark Theme
-            </Button>
-          </div>
-        )}
-      </ThemeContext.Consumer>
-  )
+      <div className="flex items-center space-x-4">
+        <Button
+            className="w-24 justify-center text-center font-normal"
+            variant={theme === themes.light ? "outline" : "default"}
+            onClick={() => setTheme(themes.light)}
+        >
+          <SunIcon className="mr-1 h-4 w-4 -translate-x-1" />
+          Light Theme
+        </Button>
+        <Button
+            className="w-24 justify-center text-center font-normal"
+            variant={theme === themes.dark ? "outline" : "default"}
+            onClick={() => setTheme(themes.dark)}
+        >
+          <MoonIcon className="mr-1 h-4 w-4 -translate-x-1" />
+          Dark Theme
+        </Button>
+      </div>
+  );
 }
+
 
 
 function SunIcon(props) {
