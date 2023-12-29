@@ -40,7 +40,7 @@ export function Main() {
             </CardHeader>
             <CardContent>
               <Avatar size="large" src="/placeholder.svg?height=100&width=100" />
-              <p>Hi, I'm a blogger. This is my blog where I write about various topics that interest me.</p>
+              <p>Hi, I m a blogger. This is my blog where I write about various topics that interest me.</p>
             </CardContent>
           </Card>
           <Card>

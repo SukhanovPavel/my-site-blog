@@ -1,7 +1,5 @@
 import React from 'react';
-import Link from "next/link";
 import {Card, CardContent, CardHeader} from "@/components/ui/card";
-import {Button} from "@/components/ui/button";
 import {Avatar} from "@/components/ui/avatar";
 import {Badge} from "@/components/ui/badge";
 
@@ -18,7 +16,7 @@ const Page = () => {
                     </CardHeader>
                     <CardContent>
                         <Avatar size="large" src="/placeholder.svg?height=100&width=100" />
-                        <p>Hi, I'm a blogger. This is my blog where I write about various topics that interest me.</p>
+                        <p>Hi, I m a blogger. This is my blog where I write about various topics that interest me.</p>
                     </CardContent>
                 </Card>
                 <Card>
