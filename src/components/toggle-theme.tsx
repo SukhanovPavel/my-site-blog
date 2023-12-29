@@ -6,7 +6,7 @@ export function ToggleTheme() {
 
   type Props = {
     theme: string;
-    setTheme: (string) => void;
+    setTheme: (arg: string) => void;
   }
   return (
       <ThemeContext.Consumer>
