@@ -1,12 +1,13 @@
 'use client'
-import React from 'react'
+import React, {ReactNode} from 'react'
 import { ThemeContext, themes } from '../contexts/ThemeContext'
 
 
-export const getTheme = () => {
+export const getTheme = (): typeof themes[keyof typeof themes] => {
     if (typeof window !== 'undefined') {
         const theme = `${window?.localStorage?.getItem('theme')}`
-        if (Object.values(themes).includes(theme)) return theme
+        if (Object.values(themes).includes(theme)) return theme as typeof themes[keyof typeof themes];
+
 
         const userMedia = window.matchMedia('(prefers-color-scheme: light)')
         if (userMedia.matches) return themes.light
@@ -16,7 +17,7 @@ export const getTheme = () => {
 }
 
 
-const ThemeProvider = ({ children }) => {
+const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [ theme, setTheme ] = React.useState(getTheme)
 
     React.useEffect(() => {
