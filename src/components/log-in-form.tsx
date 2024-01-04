@@ -120,6 +120,6 @@ export function LogInForm() {
         <>{!loggedIn && <Link href="#" onClick={() => setIsOpen(true)}>LogIn</Link>}</>
     }
     {newUserModal && <CreateNewUser handleClose={setNewUserModal}/>}
-    {loggedIn && <LoggedUser setLoggedIn={() => setLoggedIn(false)}/>}
+    {loggedIn && <LoggedUser setLoggedIn={setLoggedIn}/>}
   </>
 }

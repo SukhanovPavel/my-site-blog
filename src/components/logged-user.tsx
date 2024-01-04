@@ -3,7 +3,7 @@ import {NewPost} from "@/components/new-post";
 import Link from "next/link";
 import {UserContext} from "@/contexts/UserContext";
 
-const LoggedUser = ({setLoggedIn}: () => void) => {
+const LoggedUser = ({setLoggedIn}: (arg: boolean) => void) => {
 
     const {user} = useContext(UserContext);
 
@@ -13,7 +13,7 @@ const LoggedUser = ({setLoggedIn}: () => void) => {
             <NewPost />
             <Link href="#" onClick={() => {
                 localStorage.removeItem('loggedIn');
-                setLoggedIn();
+                setLoggedIn(false);
             }}>Exit</Link>
         </>
     );
