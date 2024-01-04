@@ -3,8 +3,8 @@ import { CardHeader, CardContent, Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import {useState} from "react";
+// import { Badge } from "@/components/ui/badge"
+import {MouseEvent, useState} from "react";
 import Link from "next/link";
 
 export function NewPost() {
@@ -16,7 +16,7 @@ export function NewPost() {
     {isOpen ?
         <div
           className="bg-black/50 flex justify-center fixed top-0 left-0 right-0 bottom-0 pt-4 pb-4"
-          onClick={(e) => e.target === e.currentTarget && setIsOpen(false)}
+          onClick={(e: MouseEvent<HTMLDivElement>) => e.target === e.currentTarget && setIsOpen(false)}
         >
           <main className="bg-gray-700 w-3/4 flex flex-col lg:flex-row gap-6 px-6 py-4">
             <section className="flex-grow">

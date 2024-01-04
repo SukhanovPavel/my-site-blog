@@ -1,5 +1,5 @@
 'use client'
-import {useContext, useEffect, useState} from "react";
+import {useContext, useEffect, useState, MouseEvent} from "react";
 import { CardHeader, CardContent, Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -34,7 +34,7 @@ export function LogInForm() {
     setUser({username: storageUser, email: storageEmail, isAdmin: storageIsAdmin === "true"});
   }, []);
 
-  const handleLogin = async (e) => {
+  const handleLogin = async (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
     try {

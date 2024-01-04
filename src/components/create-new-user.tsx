@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {MouseEvent, useState} from 'react';
 import {Card, CardContent} from "@/components/ui/card";
 import {Label} from "@/components/ui/label";
 import {Input} from "@/components/ui/input";
@@ -16,7 +16,7 @@ export const CreateNewUser = ({handleClose}: Props) => {
     const [password, setPassword] = useState("");
 
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
 
         try {
@@ -51,7 +51,7 @@ export const CreateNewUser = ({handleClose}: Props) => {
 return (
         <div
             className="bg-black/50 flex justify-center fixed top-0 left-0 right-0 bottom-0 pt-4 pb-4"
-            onClick={(e) => e.target === e.currentTarget && handleClose(false)}
+            onClick={(e: MouseEvent<HTMLDivElement>) => e.target === e.currentTarget && handleClose(false)}
         >
             <main className="bg-gray-700 flex flex-col lg:flex-row gap-6 px-6 py-4">
                 <Card>
