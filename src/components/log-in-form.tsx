@@ -36,9 +36,9 @@ export function LogInForm() {
 
   const handleLogin = async (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-
+    // http://localhost:3000
     try {
-      const response = await fetch(`http://localhost:3000/api/login?email=${email}&password=${password}`, {
+      const response = await fetch(`https://www.web-hack.pro//api/login?email=${email}&password=${password}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
