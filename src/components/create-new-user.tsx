@@ -23,7 +23,7 @@ export const CreateNewUser = ({handleClose}: Props) => {
             const saltRounds = 10;
             const hashedPassword = await bcrypt.hash(password, saltRounds);
             const dateNow = new Date().getDate()+"."+(new Date().getMonth()+1)+"."+new Date().getFullYear()
-            const response = await fetch(`http://localhost:3000/api/add-user?&username=${username}&email=${userEmail}&password=${hashedPassword}&created=${dateNow}`, {
+            const response = await fetch(`https://www.web-hack.pro/api/add-user?&username=${username}&email=${userEmail}&password=${hashedPassword}&created=${dateNow}`, {
             method: 'GET',
                 headers: {
                 'Content-Type': 'application/json'
