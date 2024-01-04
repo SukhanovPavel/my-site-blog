@@ -28,7 +28,9 @@ export async function GET(request: Request) {
         username: user.rows[0].username,
         email: user.rows[0].email,
         isAdmin: user.rows[0].email === "psuhanov77@gmail.com"
-    }
+    };
+    const response = NextResponse.json({userData}, {status: 200});
+    response.headers.set('Access-Control-Allow-Origin', 'https://www.web-hack.pro');
     if (match) return NextResponse.json({userData}, {status: 200});
 
     } catch (error) {
