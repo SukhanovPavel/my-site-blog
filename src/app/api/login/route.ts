@@ -16,8 +16,12 @@ export async function GET(request: Request) {
 //     }
 
     const user = await sql`SELECT * FROM users WHERE (email) = (${email});`;
+    // if (user.rows.length === 0) {
+    //     throw new Error('User not found');
+    // }
+
     const hashPass = user.rows[0].password_hash;
-    const match = await bcrypt.compare(password, hashPass);
+    const match = await bcrypt.compare(password ? password : "incorrect", hashPass);
     if (!match) throw new Error('Incorrect password');
 
     const userData = {
