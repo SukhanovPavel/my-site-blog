@@ -28,9 +28,9 @@ export function LogInForm() {
     if (storedLoggedIn) {
       setLoggedIn(true);
     }
-    const storageUser = localStorage.getItem('user');
-    const storageEmail = localStorage.getItem('email');
-    const storageIsAdmin= localStorage.getItem('isAdmin');
+    const storageUser = localStorage.getItem('user') as string;
+    const storageEmail = localStorage.getItem('email') as string;
+    const storageIsAdmin= localStorage.getItem('isAdmin') as string;
     setUser({username: storageUser, email: storageEmail, isAdmin: storageIsAdmin === "true"});
   }, []);
 
