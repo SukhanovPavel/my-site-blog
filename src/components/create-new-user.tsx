@@ -5,7 +5,11 @@ import {Input} from "@/components/ui/input";
 import {Button} from "@/components/ui/button";
 import bcrypt from "bcryptjs";
 
-export const CreateNewUser = ({handleClose}) => {
+type Props = {
+    handleClose: (arg: boolean) => void;
+}
+
+export const CreateNewUser = ({handleClose}: Props) => {
 
     const [username, setUsername] = useState("");
     const [userEmail, setUserEmail] = useState("");

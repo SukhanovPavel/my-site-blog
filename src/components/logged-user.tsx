@@ -3,7 +3,7 @@ import {NewPost} from "@/components/new-post";
 import Link from "next/link";
 import {UserContext} from "@/contexts/UserContext";
 
-const LoggedUser = ({setLoggedIn}) => {
+const LoggedUser = ({setLoggedIn}: () => void) => {
 
     const {user} = useContext(UserContext);
 
