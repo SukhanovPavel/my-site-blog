@@ -3,7 +3,11 @@ import {NewPost} from "@/components/new-post";
 import Link from "next/link";
 import {UserContext} from "@/contexts/UserContext";
 
-const LoggedUser = ({setLoggedIn}: (arg: boolean) => void) => {
+type Props = {
+    setLoggedIn: (arg: boolean) => void;
+}
+
+const LoggedUser = ({setLoggedIn}: Props) => {
 
     const {user} = useContext(UserContext);
 
