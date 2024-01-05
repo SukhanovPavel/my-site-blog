@@ -6,8 +6,8 @@ import { Badge } from "@/components/ui/badge"
 
 export function Main() {
   return (
-      <main className="flex flex-row justify-between px-4 py-6 md:px-6 md:py-12 lg:py-16">
-        <section className="w-3/4 space-y-4">
+      <main className="flex lap:flex-row mob:flex-col mob:mt-20 justify-between px-4 py-6 md:px-6 md:py-12 lg:py-16 mob:p-2">
+        <section className="w-full space-y-4">
           <Card>
             <CardHeader>
               <h2 className="text-2xl font-bold">Blog Post One</h2>
@@ -33,7 +33,7 @@ export function Main() {
             </CardContent>
           </Card>
         </section>
-        <aside className="w-1/4 space-y-4 px-2">
+        <aside className="w-1/4 space-y-4 px-2 mob:hidden lap:block">
           <Card>
             <CardHeader>
               <h2 className="text-xl font-bold">About Me</h2>

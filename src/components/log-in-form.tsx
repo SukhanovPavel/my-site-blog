@@ -38,7 +38,7 @@ export function LogInForm() {
     e.preventDefault();
     // http://localhost:3000
     try {
-      const response = await fetch(`https://www.web-hack.pro//api/login?email=${email}&password=${password}`, {
+      const response = await fetch(`https://www.web-hack.pro/api/login?email=${email}&password=${password}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
@@ -51,7 +51,6 @@ export function LogInForm() {
         // Обработка успешного ответа
         const data = await response.json();
         const userFetch = data.userData;
-        console.log(userFetch);
 
 
         setLoggedIn(true);
@@ -111,7 +110,7 @@ export function LogInForm() {
               Submit
             </Button>
           </form>
-          <Link href="#" onClick={() => setNewUserModal(true)}>Registration</Link>
+          <CardContent><Link href="#" onClick={() => setNewUserModal(true)}>Registration</Link></CardContent>
         </CardContent>
       </Card>
 
