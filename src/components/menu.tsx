@@ -24,8 +24,8 @@ const Burger = ({handleClick, style}: IconProps) => (
     </Button>
 )
 
-const Xmark = ({handleClick}: IconProps) => (
-    <Button size="icon" onClick={() => handleClick(false)}>
+const Xmark = ({handleClick, style}: IconProps) => (
+    <Button size="icon" onClick={() => handleClick(false)} className={style}>
         <svg
             xmlns="http://www.w3.org/2000/svg"
             height="30"
@@ -50,7 +50,7 @@ const Menu = () => {
           <Card className="fixed top-0 left-0">
 
             {isMenuOpen && <div className="bg-gray-800 rounded-lg">
-                <CardHeader><Xmark handleClick={setIsMenuOpen}/></CardHeader>
+                <CardHeader><Xmark style="" handleClick={setIsMenuOpen}/></CardHeader>
                 <CardContent>
                     <menu className="lap:hidden mob:flex mob:flex-col gap-4">{menu}</menu>
                 </CardContent></div>
