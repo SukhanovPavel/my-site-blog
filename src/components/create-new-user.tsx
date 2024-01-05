@@ -38,12 +38,10 @@ export const CreateNewUser = ({handleClose}: Props) => {
         } else {
             // Обработка ошибки
             alert("bad")
-            console.log(response)
         }
     } catch (error) {
         // Обработка сетевой ошибки
             alert(error)
-            console.log(error)
     }
 };
 

@@ -25,3 +25,7 @@ html {
   color: rgb(var(--foreground-rgb));
   background-color: rgb(var(--new-color));
 }
+
+svg {
+  fill: rgb(var(--foreground-rgb));
+}

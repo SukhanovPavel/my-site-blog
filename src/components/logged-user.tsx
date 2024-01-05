@@ -12,14 +12,14 @@ const LoggedUser = ({setLoggedIn}: Props) => {
     const {user} = useContext(UserContext);
 
     return (
-        <>
-            <div className=" rounded-full bg-green-400 p-4">{user.username}</div>
+        <div className="fixed top-2 right-2 flex items-center gap-4">
             <NewPost />
+            <div className=" rounded-full bg-green-400 p-4">{user.username}</div>
             <Link href="#" onClick={() => {
                 localStorage.removeItem('loggedIn');
                 setLoggedIn(false);
             }}>Exit</Link>
-        </>
+        </div>
     );
 };
 

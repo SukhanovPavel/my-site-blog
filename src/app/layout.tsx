@@ -7,6 +7,7 @@ import {LogInForm} from "@/components/log-in-form";
 
 import './globals.scss';
 import UserProvider from "@/providers/UserProvider";
+import Menu from "@/components/menu";
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,20 +21,29 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
+
+
   return (
     <html lang="en">
       <ThemeProvider><UserProvider>
-        <body className={inter.className}>
-          <div className="min-h-screen bg-gray-800 dark:bg-gray-800">
-            <header className="flex h-20 w-full shrink-0 items-center px-4 md:px-6 gap-4">
-              <Link href="#">
+        <body className={inter.className+"min-h-screen bg-gray-800 dark:bg-gray-800"}>
+          <div
+              // className="min-h-screen h-auto bg-gray-800 dark:bg-gray-800"
+          >
+            <header className="fixed top-0 flex h-20 w-full shrink-0 items-center px-4 md:px-6 gap-4">
+              <Link href="#" className=" mob:hidden">
                 <h1 className="font-bold text-3xl">My Blog and cheat sheet for frontend development</h1>
               </Link>
-              <Link href="/">Home</Link>
-              <Link href="aboutPage">About</Link>
+
+              <Menu />
+              {/*<Link href="/">Home</Link>*/}
+              {/*<Link href="aboutPage">About</Link>*/}
+              {/*<ToggleTheme/>*/}
+              {/*<LogInForm />*/}
+
               <ToggleTheme/>
               <LogInForm />
-              {/*<NewPost />*/}
             </header>
             {children}
             <footer className="flex h-20 w-full shrink-0 items-center px-4 md:px-6">
