@@ -24,8 +24,8 @@ const Burger = ({handleClick, style}: IconProps) => (
     </Button>
 )
 
-const Xmark = ({handleClick, style}: IconProps) => (
-    <Button size="icon" onClick={() => handleClick(false)} className={style}>
+const Xmark = ({handleClick}: IconProps) => (
+    <Button size="icon" onClick={() => handleClick(false)}>
         <svg
             xmlns="http://www.w3.org/2000/svg"
             height="30"
