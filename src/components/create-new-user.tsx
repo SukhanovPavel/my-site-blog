@@ -49,7 +49,7 @@ export const CreateNewUser = ({handleClose}: Props) => {
             }
         } catch (error) {
             // Обработка сетевой ошибки
-            if(error) {
+            if(error.error) {
                 alert(error?.error)
             }
         }
