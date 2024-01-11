@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14555689-617c-40e8-80f8-1ed85a13797b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/add-user/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/add-user/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/create-blog-table/route.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/create-posts-table/route.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/login/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/login/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/globals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create-new-user.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create-new-user.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/log-in-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/log-in-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/logged-user.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/logged-user.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/new-post.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/new-post.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/toggle-theme.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/toggle-theme.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/avatar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/avatar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contexts/UserContext.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/contexts/UserContext.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/providers/UserProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/providers/UserProvider.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="14555689-617c-40e8-80f8-1ed85a13797b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,7 +59,7 @@
       <workItem from="1696653353159" duration="8436000" />
       <workItem from="1700635017628" duration="8402000" />
       <workItem from="1703842207569" duration="101567000" />
-      <workItem from="1704477635067" duration="89224000" />
+      <workItem from="1704477635067" duration="89540000" />
     </task>
     <servers />
   </component>

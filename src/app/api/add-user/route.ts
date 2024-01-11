@@ -20,9 +20,9 @@ export async function GET(request: Request) {
 
         await sql`INSERT INTO users (Username, Email, Password_hash) VALUES (${Username}, ${Email}, ${Password_hash});`;
     } catch (error) {
-        return NextResponse.json({ error: error.message }, { status: 500 });
+        return NextResponse.json({ error: error.message,  status: 500 } );
     }
 
     const users = await sql`SELECT * FROM Users;`;
-    return NextResponse.json({ users }, { status: 200 });
+    return NextResponse.json({ users, status: 200  });
 }
