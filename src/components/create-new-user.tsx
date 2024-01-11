@@ -47,9 +47,11 @@ export const CreateNewUser = ({handleClose}: Props) => {
                 const error = await response.json();
                 alert(error?.error)
             }
-        } catch (error: {error: string}) {
+        } catch (error) {
             // Обработка сетевой ошибки
-            alert(error?.error)
+            if(error instanceof typeof error) {
+                alert(error?.error)
+            }
         }
         setUsername("");
         setUserEmail("");
