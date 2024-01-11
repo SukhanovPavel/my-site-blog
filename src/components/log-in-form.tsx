@@ -67,11 +67,11 @@ export function LogInForm() {
       } else {
         // Обработка ошибки
         const error = await response.json();
-        alert(error?.message);
+        alert(error?.error);
       }
-    } catch (error) {
+    } catch (error: {error: string}) {
       // Обработка сетевой ошибки
-      alert("ooops! error: "+error?.message)
+      alert("ooops! error: "+error?.error)
     }
     setIsLoading(false);
   };

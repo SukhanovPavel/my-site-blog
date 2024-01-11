@@ -27,9 +27,9 @@ export async function GET(request: Request) {
             isAdmin: user.rows[0].email === "psuhanov77@gmail.com"
         };
 
-        if (match) return NextResponse.json({userData, status: 200});
+        if (match) return NextResponse.json({userData}, {status: 200});
 
     } catch (error) {
-        if (error instanceof Error) {return NextResponse.json({ error: error.message, status: 500} )};
+        if (error instanceof Error) {return NextResponse.json({ error: error.message}, {status: 500} )};
     }
 };
