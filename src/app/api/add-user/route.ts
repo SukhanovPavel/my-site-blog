@@ -19,7 +19,7 @@ export async function GET(request: Request) {
         };
 
         await sql`INSERT INTO users (Username, Email, Password_hash) VALUES (${Username}, ${Email}, ${Password_hash});`;
-    } catch (error) {
+    } catch (error: Error) {
         return NextResponse.json({ error: error.message,  status: 500 } );
     }
 
