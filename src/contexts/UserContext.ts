@@ -1,12 +1,14 @@
 import React from 'react';
 
 export type User = {
+    id: string;
     username: string;
     email: string;
     isAdmin: boolean;
 };
 
 const user: User = {
+    id: "",
     username: "",
     email: "",
     isAdmin: false,

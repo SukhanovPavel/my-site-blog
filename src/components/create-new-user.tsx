@@ -1,9 +1,11 @@
+'use client'
 import React, {MouseEvent, useState} from 'react';
 import {Card, CardContent} from "@/components/ui/card";
 import {Label} from "@/components/ui/label";
 import {Input} from "@/components/ui/input";
 import {Button} from "@/components/ui/button";
 import bcrypt from "bcryptjs";
+import {Spinner} from "@/components/spinner";
 
 type Props = {
     handleClose: (arg: boolean) => void;
@@ -15,44 +17,54 @@ export const CreateNewUser = ({handleClose}: Props) => {
     const [userEmail, setUserEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const [isLoading, setIsLoading] = useState(false);
+
 
     const handleSubmit = async (e: MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
+        setIsLoading(true);
 
         try {
             const saltRounds = 10;
             const hashedPassword = await bcrypt.hash(password, saltRounds);
-            const dateNow = new Date().getDate()+"."+(new Date().getMonth()+1)+"."+new Date().getFullYear()
-            const response = await fetch(`https://www.web-hack.pro/api/add-user?&username=${username}&email=${userEmail}&password=${hashedPassword}&created=${dateNow}`, {
-            method: 'GET',
+
+
+            // http://localhost:3000  https://www.web-hack.pro
+            const response = await fetch(`/api/add-user?&username=${username}&email=${userEmail}&password=${hashedPassword}}`, {
+                method: 'GET',
                 headers: {
-                'Content-Type': 'application/json'
-            },
-            // Можно добавить тело запроса, если это необходимо
-            // body: JSON.stringify({ id, username, userEmail, password })
-        });
+                    'Content-Type': 'application/json'
+                },
+                // Можно добавить тело запроса, если это необходимо
+                // body: JSON.stringify({ id, username, userEmail, password })
+            });
 
-        if (response.ok) {
-            // Обработка успешного ответа
-            alert("wow! new user!")
-        } else {
-            // Обработка ошибки
-            alert("bad")
+            if (response.ok) {
+                // Обработка успешного ответа
+                alert("wow! new user!")
+            } else {
+                // Обработка ошибки
+                const error = await response.json();
+                alert(error.error)
+            }
+        } catch (error) {
+            // Обработка сетевой ошибки
+            alert(error.error)
         }
-    } catch (error) {
-        // Обработка сетевой ошибки
-            alert(error)
-    }
-};
+        setUsername("");
+        setUserEmail("");
+        setPassword("");
+        setIsLoading(false);
+        handleClose(false);
+    };
 
-
-return (
+    return (
         <div
             className="bg-black/50 flex justify-center fixed top-0 left-0 right-0 bottom-0 pt-4 pb-4"
             onClick={(e: MouseEvent<HTMLDivElement>) => e.target === e.currentTarget && handleClose(false)}
         >
-            <main className="bg-gray-700 flex flex-col lg:flex-row gap-6 px-6 py-4">
-                <Card>
+            <main className="bg-gray-700 flex flex-col lg:flex-row gap-6 lap:px-6 mob:px-2 lap:w-auto mob:w-full mob:mx-2 lap:my-auto mob:h-min my-auto py-10">
+                {isLoading ? <Spinner/> : <Card>
                     <CardContent>
                         <form className="space-y-4">
                             <div className="space-y-2">
@@ -66,9 +78,10 @@ return (
                                 />
                             </div>
                             <div className="space-y-2">
-                                <Label htmlFor="user-name">User email</Label>
+                                <Label htmlFor="user-email">User email</Label>
                                 <Input
                                     id="user-email"
+                                    type="email"
                                     placeholder="Enter your email"
                                     required
                                     value={userEmail}
@@ -95,7 +108,7 @@ return (
                             </Button>
                         </form>
                     </CardContent>
-                </Card>
+                </Card>}
             </main>
         </div>
     );

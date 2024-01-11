@@ -7,6 +7,7 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --new-color: 255, 255, 255;
+  --link-color: 0,0,255;
 }
 
 //@media (prefers-color-scheme: dark) {
@@ -15,6 +16,7 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
     --new-color: rgb(59 130 246 / 0.5);
+    --link-color: 0, 255, 128;
   }
 //}
 html {
@@ -25,7 +27,10 @@ html {
   color: rgb(var(--foreground-rgb));
   background-color: rgb(var(--new-color));
 }
-
+#textLink {
+  text-decoration: underline;
+  color: rgb(var(--link-color));
+}
 svg {
   fill: rgb(var(--foreground-rgb));
 }

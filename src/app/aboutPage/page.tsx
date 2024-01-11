@@ -6,8 +6,8 @@ import {Badge} from "@/components/ui/badge";
 const Page = () => {
     return (
         <main className="flex flex-row justify-between px-4 py-6 md:px-6 md:py-12 lg:py-16">
-            <section className="w-3/4 space-y-4 bg-slate-200">
-
+            <section className="w-3/4 space-y-4">
+                Фронтенд разработчик
             </section>
             <aside className="w-1/4 space-y-4 px-2">
                 <Card>
