@@ -287,4 +287,7 @@ export async function GET(request: Request) {
   )
 }
 
-const P = ({children}: { string }) => (<p  className="indent-8">{children}</p>)
+type pProps = {
+  text: string;
+}
+const P = ({text}: pProps) => (<p  className="indent-8">{text}</p>)

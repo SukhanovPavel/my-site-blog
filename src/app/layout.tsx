@@ -26,6 +26,9 @@ export default function RootLayout({
 
     return (
         <html lang="ru">
+        <head>
+            <meta name="yandex-verification" content="9d268429e709cc18" />
+        </head>
         <ThemeProvider>
             <UserProvider>
                 <body className={inter.className + "lap:min-h-screen bg-gray-800 dark:bg-gray-800"}>
