@@ -288,6 +288,6 @@ export async function GET(request: Request) {
 }
 
 type pProps = {
-  children: string | Element;
+  children: React.ReactNode;
 }
 const P = ({children}: pProps) => (<p  className="indent-8">{children}</p>)
