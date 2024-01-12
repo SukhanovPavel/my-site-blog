@@ -4,7 +4,7 @@ import {UserContext} from "@/contexts/UserContext";
 
 const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
 
-    const [user, setUser] = useState({username: "", email: "", isAdmin: false})
+    const [user, setUser] = useState({id:"", username: "", email: "", isAdmin: false})
 
     return (
         <UserContext.Provider value={{ user, setUser }}>

@@ -6,15 +6,14 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import {CreateNewUser} from "@/components/create-new-user";
-import {NewPost} from "@/components/new-post";
 import {UserContext} from "@/contexts/UserContext";
+import LoggedUser from "@/components/logged-user";
+import {Spinner} from "@/components/spinner";
 
 import '../app/globals.scss';
-import LoggedUser from "@/components/logged-user";
 
 export function LogInForm() {
 
-  // const [user, setUser] = useState("");
   const {user, setUser} = useContext(UserContext);
   const [isOpen, setIsOpen] = useState(false);
   const [newUserModal, setNewUserModal] = useState(false);
@@ -23,57 +22,64 @@ export function LogInForm() {
   const [password, setPassword] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
 
+  const [isLoading, setIsLoading] = useState(false);
+
   useEffect(() => {
     const storedLoggedIn = localStorage.getItem('loggedIn');
     if (storedLoggedIn) {
       setLoggedIn(true);
     }
+    const storageId = localStorage.getItem('id') as string;
     const storageUser = localStorage.getItem('user') as string;
     const storageEmail = localStorage.getItem('email') as string;
     const storageIsAdmin= localStorage.getItem('isAdmin') as string;
-    setUser({username: storageUser, email: storageEmail, isAdmin: storageIsAdmin === "true"});
+    setUser({id: storageId,username: storageUser, email: storageEmail, isAdmin: storageIsAdmin === "true"});
   }, []);
 
   const handleLogin = async (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    // http://localhost:3000
+    setIsLoading(true);
+    // http://localhost:3000  https://www.web-hack.pro
     try {
-      const response = await fetch(`https://www.web-hack.pro/api/login?email=${email}&password=${password}`, {
+      const response = await fetch(`/api/login?email=${email}&password=${password}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
         },
         // Можно добавить тело запроса, если это необходимо
         // body: JSON.stringify({ id, username, userEmail, password })
-      });
+      })
 
       if (response.ok) {
         // Обработка успешного ответа
         const data = await response.json();
         const userFetch = data.userData;
 
-
         setLoggedIn(true);
         localStorage.setItem('loggedIn', 'true');
 
-        setUser({username: userFetch.username, email: userFetch.email, isAdmin: userFetch.isAdmin});
+        setUser({id: userFetch.id.toString(), username: userFetch.username, email: userFetch.email, isAdmin: userFetch.isAdmin});
+        localStorage.setItem('id', userFetch.id.toString());
         localStorage.setItem('user', userFetch.username);
         localStorage.setItem('email', userFetch.email);
         localStorage.setItem('isAdmin', userFetch.isAdmin.toString());
         setIsOpen(false);
       } else {
         // Обработка ошибки
-        // console.log(error)
-        alert("bad")
+        const error = await response.json();
+        alert(error.message);
       }
     } catch (error) {
       // Обработка сетевой ошибки
-      alert("ooops! error: "+error)
+      if(error && typeof error === 'object' && 'message' in error) {
+        alert("ooops! error: "+error.message)
+      } else alert('error ???')
     }
+    setIsLoading(false);
   };
 
   return<>
-    {isOpen ?
+    {isOpen ? !isLoading ?
       <div className="fixed top-2 right-2 mx-auto max-w-md space-y-6 bg-gray-700 rounded-2xl">
       <Card className="bg-inherit text-inherit">
         <CardHeader>
@@ -82,10 +88,10 @@ export function LogInForm() {
         <CardContent>
           <form className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="user-name">User nickname</Label>
+              <Label htmlFor="user-email">User email</Label>
               <Input
-                  id="user-name"
-                  placeholder="Enter your name"
+                  id="user-email"
+                  placeholder="Enter your email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -110,13 +116,20 @@ export function LogInForm() {
               Submit
             </Button>
           </form>
-          <CardContent><Link href="#" onClick={() => setNewUserModal(true)}>Registration</Link></CardContent>
+          <CardContent>
+            <Link href="#" onClick={() => setNewUserModal(true)}>Registration</Link>
+          </CardContent>
+          <CardContent>
+            <Link href="#" onClick={() => setIsOpen(false)}>Close</Link>
+          </CardContent>
         </CardContent>
       </Card>
 
-    </div>
+      </div>
       :
-        <>{!loggedIn && <Link href="#" onClick={() => setIsOpen(true)}>LogIn</Link>}</>
+      <div className="absolute right-10 flex items-center">Loading...   <Spinner/></div>
+      :
+        <>{!loggedIn && <Link className="absolute right-10 bg-gray-700 text-white" href="#" onClick={() => setIsOpen(true)}>LogIn</Link>}</>
     }
     {newUserModal && <CreateNewUser handleClose={setNewUserModal}/>}
     {loggedIn && <LoggedUser setLoggedIn={setLoggedIn}/>}

@@ -1,9 +1,9 @@
 'use client'
-import { Button } from "@/components/ui/button";
+import {Button} from "@/components/ui/button";
 import {ThemeContext, themes} from "@/contexts/ThemeContext";
-import {useContext, useEffect, useState} from 'react';
+import {use, useEffect, useState} from 'react';
 
-const sun = <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512">
+const sun = <svg  className="bg-gray-700 fill-white" xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512">
     <path d="M375.7 19.7c-1.5-8-6.9-14.7-14.4-17.8s-16.1-2.2-22.8 2.4L256 61.1 173.5
     4.2c-6.7-4.6-15.3-5.5-22.8-2.4s-12.9 9.8-14.4 17.8l-18.1 98.5L19.7 136.3c-8 1.5-14.7 6.9-17.8 14.4s-2.2
     16.1 2.4 22.8L61.1 256 4.2 338.5c-4.6 6.7-5.5 15.3-2.4 22.8s9.8 13 17.8 14.4l98.5 18.1 18.1 98.5c1.5 8 6.9
@@ -27,39 +27,19 @@ const moon = <svg xmlns="http://www.w3.org/2000/svg" height="16" width="12" view
 </svg>
 
 export function ToggleTheme() {
-  const { theme, setTheme } = useContext(ThemeContext);
+    const {theme, setTheme} = use(ThemeContext);
 
-  const [themeIcon, setThemeIcon] = useState(moon);
+    const [themeIcon, setThemeIcon] = useState(moon);
 
     useEffect(() => {
         setThemeIcon(theme === themes.dark ? moon : sun)
-    }, [ theme ]);
+    }, [theme]);
 
-  return (
-      <>
+    return (
         <Button
             onClick={() => theme === "dark" ? setTheme(themes.light) : setTheme(themes.dark)}
         >
-            <div className="lap:hidden mob:block">{themeIcon}</div>
+            <div>{themeIcon}</div>
         </Button>
-        <div className="lap:flex lap:items-center lap:space-x-4 mob:hidden">
-            <Button
-                className="w-24 justify-center text-center font-norma"
-                // variant={theme === themes.light ? "outline" : "default"}
-                variant="outline"
-                onClick={() => setTheme(themes.light)}
-            >
-              Light Theme
-            </Button>
-            <Button
-                className="w-24 justify-center text-center font-normal"
-                // variant={theme === themes.dark ? "outline" : "default"}
-                variant="outline"
-                onClick={() => setTheme(themes.dark)}
-            >
-              Dark Theme
-            </Button>
-          </div>
-        </>
-  );
-}
+    );
+};

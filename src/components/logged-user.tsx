@@ -1,5 +1,4 @@
-import React, {useContext} from 'react';
-import {NewPost} from "@/components/new-post";
+import React, {use} from 'react';
 import Link from "next/link";
 import {UserContext} from "@/contexts/UserContext";
 
@@ -9,13 +8,13 @@ type Props = {
 
 const LoggedUser = ({setLoggedIn}: Props) => {
 
-    const {user} = useContext(UserContext);
+    const {user} = use(UserContext);
 
     return (
-        <div className="fixed top-2 right-2 flex items-center gap-4">
-            <NewPost />
-            <div className=" rounded-full bg-green-400 p-4">{user.username}</div>
-            <Link href="#" onClick={() => {
+        <div className="absolute bg-gray-700 right-2 flex items-center gap-4">
+            <div className="bg-gray-700 text-white">{user.username}</div>
+            <div className="w-10 rounded-full"><img className="rounded-xl" src='pixel.jpeg'/></div>
+            <Link className="bg-gray-700 text-white mr-4" href="#" onClick={() => {
                 localStorage.removeItem('loggedIn');
                 setLoggedIn(false);
             }}>Exit</Link>
