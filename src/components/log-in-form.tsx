@@ -71,7 +71,7 @@ export function LogInForm() {
       }
     } catch (error) {
       // Обработка сетевой ошибки
-      if(typeof error.error === "undefined" || "string" || "null") {alert("ooops! error: "+error?.error)}
+      if(error) {alert("ooops! error: "+error?.error)} else alert('error ???')
     }
     setIsLoading(false);
   };

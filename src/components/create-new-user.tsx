@@ -49,9 +49,9 @@ export const CreateNewUser = ({handleClose}: Props) => {
             }
         } catch (error) {
             // Обработка сетевой ошибки
-            if(typeof error.error ===  "undefined" || "string" || "null") {
+            if(error) {
                 alert(error?.error)
-            }
+            }  else alert('error ???')
         }
         setUsername("");
         setUserEmail("");
