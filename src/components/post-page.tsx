@@ -288,6 +288,6 @@ export async function GET(request: Request) {
 }
 
 type pProps = {
-  text: string;
+  children: string;
 }
-const P = ({text}: pProps) => (<p  className="indent-8">{text}</p>)
+const P = ({children}: pProps) => (<p  className="indent-8">{children}</p>)
