@@ -71,7 +71,9 @@ export function LogInForm() {
       }
     } catch (error) {
       // Обработка сетевой ошибки
-      if(error) {alert("ooops! error: "+error.message)} else alert('error ???')
+      if(error && typeof error === 'object' && 'message' in error) {
+        alert("ooops! error: "+error.message)
+      } else alert('error ???')
     }
     setIsLoading(false);
   };
