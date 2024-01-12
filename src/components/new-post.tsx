@@ -104,7 +104,7 @@ export function NewPost() {
                 </CardContent>
               </Card>
               <div className="flex justify-between items-center mt-4">
-                <Button onClick={handlePost}>Save Post</Button>
+                <Button>Save Post</Button>
                 <Button variant="outline" onClick={() => setPost("")}>Discard Changes</Button>
               </div>
             </section>
