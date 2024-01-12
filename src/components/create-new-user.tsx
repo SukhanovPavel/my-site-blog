@@ -45,12 +45,12 @@ export const CreateNewUser = ({handleClose}: Props) => {
             } else {
                 // Обработка ошибки
                 const error = await response.json();
-                alert(error?.error)
+                alert(error.message)
             }
         } catch (error) {
             // Обработка сетевой ошибки
             if(error) {
-                alert(error?.error)
+                alert(error.message)
             }  else alert('error ???')
         }
         setUsername("");
