@@ -46,10 +46,10 @@ const Menu = () => {
     const menu = <>
         <Link
             onClick={() => setIsMenuOpen(false)}
-            className="text-white bg-inherit hover:underline underline-offset-4" href="/">Home</Link>
+            className="lap:text-white mob:text-current bg-inherit hover:underline underline-offset-4" href="/">Home</Link>
         <Link
             onClick={() => setIsMenuOpen(false)}
-            className="text-white bg-inherit hover:underline underline-offset-4" href="content">Posts</Link>
+            className="lap:text-white mob:text-current bg-inherit hover:underline underline-offset-4" href="content">Posts</Link>
         {/*<Link*/}
         {/*    onClick={() => setIsMenuOpen(false)}*/}
         {/*    className="text-white bg-inherit hover:underline underline-offset-4" href="aboutPage">About</Link>*/}
@@ -58,20 +58,20 @@ const Menu = () => {
     return (
         <>
             {!isMenuOpen && <Burger style="mob:block lap:hidden" handleClick={setIsMenuOpen}/>}
-            <Card className="fixed top-0 left-0 w-full text-center">
+            {/*<Card className="fixed top-0 left-0 w-full text-center">*/}
 
                 {isMenuOpen &&
-                    <div className="bg-gray-700 rounded-lg w-full">
-                        <CardHeader>
-                            <Xmark style="bg-gray-700" handleClick={setIsMenuOpen}/>
-                        </CardHeader>
-                        <CardContent>
+                    <div className="bg-inherit text-current fixed top-0 left-0 rounded-lg w-full text-center">
+                        {/*<CardHeader>*/}
+                        <div className="w-full text-start px-4 py-2"><Xmark style="" handleClick={setIsMenuOpen}/></div>
+                        {/*</CardHeader>*/}
+                        {/*<CardContent>*/}
                             <menu className="lap:hidden mob:flex mob:flex-col gap-4">{menu}</menu>
-                        </CardContent>
+                        {/*</CardContent>*/}
                     </div>
                 }
 
-            </Card>
+            {/*</Card>*/}
             <menu className="lap:flex bg-gray-700 lap:flex-row gap-4 mob:hidden">{menu}</menu>
         </>
     );
