@@ -127,7 +127,7 @@ export function LogInForm() {
 
       </div>
       :
-      <div className="absolute right-10 flex items-center">Loading...   <Spinner/></div>
+      <div className="absolute bg-inherit right-10 flex items-center">Loading...   <Spinner/></div>
       :
         <>{!loggedIn && <Link className="bg-gray-700 text-white" href="#" onClick={() => setIsOpen(true)}>LogIn</Link>}</>
     }
