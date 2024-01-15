@@ -129,7 +129,7 @@ export function LogInForm() {
       :
       <div className="absolute right-10 flex items-center">Loading...   <Spinner/></div>
       :
-        <>{!loggedIn && <Link className="absolute right-10 bg-gray-700 text-white" href="#" onClick={() => setIsOpen(true)}>LogIn</Link>}</>
+        <>{!loggedIn && <Link className="bg-gray-700 text-white" href="#" onClick={() => setIsOpen(true)}>LogIn</Link>}</>
     }
     {newUserModal && <CreateNewUser handleClose={setNewUserModal}/>}
     {loggedIn && <LoggedUser setLoggedIn={setLoggedIn}/>}
