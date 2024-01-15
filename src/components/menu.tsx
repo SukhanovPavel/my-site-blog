@@ -1,7 +1,6 @@
 'use client'
 import React, {useState} from 'react';
 import Link from "next/link";
-import {Card, CardContent, CardHeader} from "@/components/ui/card";
 import {Button} from "@/components/ui/button";
 
 type IconProps = {
@@ -58,20 +57,18 @@ const Menu = () => {
     return (
         <>
             {!isMenuOpen && <Burger style="mob:block lap:hidden" handleClick={setIsMenuOpen}/>}
-            {/*<Card className="fixed top-0 left-0 w-full text-center">*/}
 
                 {isMenuOpen &&
                     <div className="bg-inherit text-current fixed top-0 left-0 rounded-lg w-full text-center">
-                        {/*<CardHeader>*/}
-                        <div className="w-full text-start px-4 py-2"><Xmark style="" handleClick={setIsMenuOpen}/></div>
-                        {/*</CardHeader>*/}
-                        {/*<CardContent>*/}
-                            <menu className="lap:hidden mob:flex mob:flex-col gap-4">{menu}</menu>
-                        {/*</CardContent>*/}
+                        <div className="w-full text-start px-4 py-2">
+                            <Xmark style="" handleClick={setIsMenuOpen}/>
+                        </div>
+                        <menu className="py-4 lap:hidden mob:flex mob:flex-col gap-4">
+                            {menu}
+                        </menu>
                     </div>
                 }
 
-            {/*</Card>*/}
             <menu className="lap:flex bg-gray-700 lap:flex-row gap-4 mob:hidden">{menu}</menu>
         </>
     );
