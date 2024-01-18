@@ -1,0 +1,4 @@
+# Allow all crawlers
+User-agent: Yandex
+Allow: /
+Sitemap: https://www.web-hack.pro/sitemap.xml
