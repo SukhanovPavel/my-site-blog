@@ -28,6 +28,7 @@ export default function RootLayout({
         <html lang="ru">
         <head>
             <meta name="yandex-verification" content="9d268429e709cc18" />
+            <link rel="icon" href="/favicon.png" sizes="32x32" type="image/png"/>
         </head>
         <ThemeProvider>
             <UserProvider>
