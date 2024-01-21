@@ -28,7 +28,10 @@ export default function RootLayout({
         <html lang="ru">
         <head>
             <meta name="yandex-verification" content="9d268429e709cc18" />
+            <meta name="google-site-verification" content="mhSnXN1rxP_geG6T7UGlU0IgPQy1_lO0gRogJzPMBIA" />
             <link rel="icon" href="/favicon.png" sizes="32x32" type="image/png"/>
+            <link rel="apple-touch-icon" href="/favicon.png" />
+            <link rel="apple-touch-icon" sizes="72x72" href="/favicon.png" />
         </head>
         <ThemeProvider>
             <UserProvider>
