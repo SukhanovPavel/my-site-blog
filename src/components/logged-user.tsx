@@ -19,7 +19,10 @@ const LoggedUser = ({setLoggedIn}: Props) => {
             <Link className="bg-gray-700 text-white mr-4" href="#" onClick={() => {
                 localStorage.removeItem('loggedIn');
                 setLoggedIn(false);
-            }}>Exit</Link>
+            }}>
+                {/*Exit*/}
+                Выход
+            </Link>
         </div>
     );
 };

@@ -25,13 +25,13 @@ export function Main() {
             </Card>
             <Card>
                 <CardHeader>
-                    <h2 className="text-2xl font-bold">Blog Post Two</h2>
-                    <p className="text-gray-500 dark:text-gray-400">Posted on February 1, 2023</p>
+                    <h2 className="text-2xl font-bold">Часть 2</h2>
+                    <p className="text-gray-500 dark:text-gray-400">Скоро...</p>
                 </CardHeader>
                 <CardContent>
-                    <p>This is an excerpt from the second blog post. Click the button below to read more.</p>
+                    <p>Материал находится в работе</p>
                     <Button size="sm" variant="outline">
-                        <Link href="#">Read More</Link>
+                        <Link href="#">...</Link>
                     </Button>
                 </CardContent>
             </Card>

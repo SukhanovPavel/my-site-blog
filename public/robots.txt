@@ -1,4 +1,4 @@
 # Allow all crawlers
-User-agent: Yandex
+User-agent: Yandex, Google
 Allow: /
 Sitemap: https://www.web-hack.pro/sitemap.xml
