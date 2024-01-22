@@ -45,13 +45,22 @@ const Menu = () => {
     const menu = <>
         <Link
             onClick={() => setIsMenuOpen(false)}
-            className="lap:text-white mob:text-current bg-inherit hover:underline underline-offset-4" href="/">Home</Link>
+            className="lap:text-white mob:text-current bg-inherit hover:underline underline-offset-4" href="/">
+            {/*Home*/}
+            Главная
+        </Link>
         <Link
             onClick={() => setIsMenuOpen(false)}
-            className="lap:text-white mob:text-current bg-inherit hover:underline underline-offset-4" href="content">Posts</Link>
-        {/*<Link*/}
-        {/*    onClick={() => setIsMenuOpen(false)}*/}
-        {/*    className="text-white bg-inherit hover:underline underline-offset-4" href="aboutPage">About</Link>*/}
+            className="lap:text-white mob:text-current bg-inherit hover:underline underline-offset-4" href="content">
+            {/*Posts*/}
+            Статьи
+        </Link>
+        <Link
+            onClick={() => setIsMenuOpen(false)}
+            className="text-white bg-inherit hover:underline underline-offset-4" href="aboutPage">
+            {/*About*/}
+            Обо мне
+        </Link>
     </>
 
     return (
@@ -69,7 +78,7 @@ const Menu = () => {
                     </div>
                 }
 
-            <menu className="lap:flex bg-gray-700 lap:flex-row gap-4 mob:hidden">{menu}</menu>
+            <menu className="lap:flex bg-gray-700 lap:flex-row gap-8 mob:hidden">{menu}</menu>
         </>
     );
 };

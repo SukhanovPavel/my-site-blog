@@ -83,12 +83,18 @@ export function LogInForm() {
       <div className="fixed top-2 right-2 mx-auto max-w-md space-y-6 bg-gray-700 rounded-2xl">
       <Card className="bg-inherit text-inherit">
         <CardHeader>
-          <h2 className="text-2xl font-bold">User Information</h2>
+          <h2 className="text-2xl font-bold">
+            {/*User Information*/}
+            Информация о пользователе
+          </h2>
         </CardHeader>
         <CardContent>
           <form className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="user-email">User email</Label>
+              <Label htmlFor="user-email">
+                {/*User email*/}
+                Емайл
+              </Label>
               <Input
                   id="user-email"
                   placeholder="Enter your email"
@@ -98,7 +104,10 @@ export function LogInForm() {
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="user-password">Password</Label>
+              <Label htmlFor="user-password">
+                {/*Password*/}
+                Пароль
+              </Label>
               <Input
                   id="user-password"
                   placeholder="******"
@@ -113,23 +122,36 @@ export function LogInForm() {
                 onClick={handleLogin}
                 type="submit"
             >
-              Submit
+              {/*Submit*/}
+              Подтвердить
             </Button>
           </form>
           <CardContent>
-            <Link href="#" onClick={() => setNewUserModal(true)}>Registration</Link>
+            <Link href="#" onClick={() => setNewUserModal(true)}>
+              {/*Registration*/}
+              Регистрация
+            </Link>
           </CardContent>
           <CardContent>
-            <Link href="#" onClick={() => setIsOpen(false)}>Close</Link>
+            <Link href="#" onClick={() => setIsOpen(false)}>
+              {/*Close*/}
+              Закрыть
+            </Link>
           </CardContent>
         </CardContent>
       </Card>
 
       </div>
       :
-      <div className="absolute bg-inherit right-10 flex items-center">Loading...   <Spinner/></div>
+      <div className="absolute bg-inherit right-10 flex items-center">
+          {/*Loading...   */}
+        Загрузка
+        <Spinner/></div>
       :
-        <>{!loggedIn && <Link className="bg-gray-700 text-white" href="#" onClick={() => setIsOpen(true)}>LogIn</Link>}</>
+        <>{!loggedIn && <Link className="bg-gray-700 text-white" href="#" onClick={() => setIsOpen(true)}>
+          {/*LogIn*/}
+          Логин
+        </Link>}</>
     }
     {newUserModal && <CreateNewUser handleClose={setNewUserModal}/>}
     {loggedIn && <LoggedUser setLoggedIn={setLoggedIn}/>}
