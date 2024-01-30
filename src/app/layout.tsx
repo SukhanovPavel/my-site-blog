@@ -57,7 +57,7 @@ export default function RootLayout({
                                     <p>
                                         {/*Hi, I m a frontend developer. This is my blog where I write about various topics*/}
                                         {/*that interest me.*/}
-                                        Я фронтенд-разработчик. Это мой блог, где я пишу на различные темы
+                                        Я - фронтенд-разработчик. Это мой блог, где я пишу на различные темы
                                         , которые меня интересуют.
                                     </p>
                                 </CardContent>
