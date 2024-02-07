@@ -30,9 +30,15 @@ export default function RootLayout({
         <head>
             <meta name="yandex-verification" content="9d268429e709cc18" />
             <meta name="google-site-verification" content="mhSnXN1rxP_geG6T7UGlU0IgPQy1_lO0gRogJzPMBIA" />
-            <link rel="icon" href="/webHackLogo.png"  type="image/png"/>
-            <link rel="apple-touch-icon" href="/webHackLogo.png" />
-            <link rel="apple-touch-icon" sizes="72x72" href="/webHackLogo.png" />
+            <link rel="icon" href="/favicon.png" type="image/png"/>
+            <link rel="apple-touch-icon" href="/favicon.png" />
+            <link rel="apple-touch-icon" sizes="72x72" href="/favicon.png" />
+            <meta property="og:title" content="Блог о фронтенд разработке. Павел Суханов"/>
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content="https://www.web-hack.pro/" />
+            <meta property="og:image" content="/favicon.png"/>
+            <meta property="og:image:width" content="1000"/>
+            <meta property="og:image:height" content="1000"/>
         </head>
         <ThemeProvider>
             <UserProvider>
