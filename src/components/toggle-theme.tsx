@@ -16,7 +16,7 @@ const sun = <svg  className="bg-gray-700 fill-white" xmlns="http://www.w3.org/20
     19 5.7 27.2 0zM256 368a112 112 0 1 0 0-224 112 112 0 1 0 0 224zM192 256a64 64 0 1 1 128 0 64 64 0 1 1 -128 0z"/>
 </svg>
 
-const moon = <svg xmlns="http://www.w3.org/2000/svg" height="16" width="12" viewBox="0 0 384 512">
+const moon = <svg className="bg-gray-700 fill-white" xmlns="http://www.w3.org/2000/svg" height="16" width="12" viewBox="0 0 384 512">
     <path d="M144.7 98.7c-21 34.1-33.1 74.3-33.1 117.3c0 98 62.8 181.4 150.4 211.7c-12.4 2.8-25.3 4.3-38.6 4.3C126.6
     432 48 353.3 48 256c0-68.9 39.4-128.4 96.8-157.3zm62.1-66C91.1 41.2 0 137.9 0 256C0 379.7 100 480 223.5 480c47.8
     0 92-15 128.4-40.6c1.9-1.3 3.7-2.7 5.5-4c4.8-3.6 9.4-7.4 13.9-11.4c2.7-2.4 5.3-4.8 7.9-7.3c5-4.9 6.3-12.5
@@ -32,7 +32,7 @@ export function ToggleTheme() {
     const [themeIcon, setThemeIcon] = useState(moon);
 
     useEffect(() => {
-        setThemeIcon(theme === themes.dark ? moon : sun)
+        setThemeIcon(theme === themes.dark ? sun : moon)
     }, [theme]);
 
     return (
