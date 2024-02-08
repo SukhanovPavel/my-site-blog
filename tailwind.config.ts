@@ -20,6 +20,8 @@ const config: Config = {
         'lap': '760px',
         // => @media (min-width: 1024px) { ... }
 
+        '1000': '1000px',
+
         'des': '1280px',
         // => @media (min-width: 1280px) { ... }
       },
