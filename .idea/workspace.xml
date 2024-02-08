@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14555689-617c-40e8-80f8-1ed85a13797b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
-    </list>
+    <list default="true" id="14555689-617c-40e8-80f8-1ed85a13797b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,7 +60,7 @@
       <workItem from="1700635017628" duration="8402000" />
       <workItem from="1703842207569" duration="101567000" />
       <workItem from="1704477635067" duration="117621000" />
-      <workItem from="1707313298910" duration="1776000" />
+      <workItem from="1707313298910" duration="3079000" />
     </task>
     <servers />
   </component>
