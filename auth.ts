@@ -66,9 +66,9 @@ import GitHub from "next-auth/providers/github"
 import type { NextAuthConfig } from "next-auth"
 
 export const config = {
-    theme: {
-        logo: "https://next-auth.js.org/img/logo/logo-sm.png",
-    },
+    // theme: {
+    //     logo: "https://next-auth.js.org/img/logo/logo-sm.png",
+    // },
     providers: [
         // Apple,
         // Atlassian,
@@ -142,4 +142,4 @@ export const config = {
     },
 } satisfies NextAuthConfig
 
-export const { handlers, auth, signIn, signOut } = NextAuth(config)
+export const { handlers, auth } = NextAuth(config)
