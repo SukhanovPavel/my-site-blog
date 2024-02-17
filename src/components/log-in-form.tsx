@@ -149,7 +149,6 @@ export function LogInForm() {
             <div>
               <button
                   className="flex flex-col items-center"
-                  href="/api/auth/signin"
                   onClick={(e) => {
                     e.preventDefault()
                     signIn()
