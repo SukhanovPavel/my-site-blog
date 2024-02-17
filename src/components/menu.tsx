@@ -57,7 +57,7 @@ const Menu = () => {
         </Link>
         <Link
             onClick={() => setIsMenuOpen(false)}
-            className="text-white mob:text-current bg-inherit hover:underline underline-offset-4" href="aboutPage">
+            className="lap:text-white mob:text-current bg-inherit hover:underline underline-offset-4" href="aboutPage">
             {/*About*/}
             Обо мне
         </Link>

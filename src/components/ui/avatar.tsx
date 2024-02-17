@@ -12,10 +12,14 @@ const ICON = <svg xmlns="http://www.w3.org/2000/svg" className="w-8" viewBox="0 
      7.2-16 16v48h32V464c0-8.8-7.2-16-16-16zm96 32a16 16 0 1 0 0-32 16 16 0 1 0 0 32z"/>
 </svg>
 
-export const Avatar = () => {
+type Props = {
+    path?: string | null;
+}
+
+export const Avatar = ({path}: Props) => {
     return (
-        <div className="w-20 rounded-full mx-auto">
-            <img className="w-full rounded-full" src="/mario.jpeg"/>
+        <div className="w-12 rounded-full mx-auto border-solid border-2 border-green-500">
+            <img className="w-full rounded-full" src={path ? path : "/mario.jpeg"}/>
         </div>
     );
 };
