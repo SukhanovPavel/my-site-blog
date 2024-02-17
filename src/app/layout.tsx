@@ -10,6 +10,7 @@ import {Badge} from "@/components/ui/badge";
 import Link from "next/link";
 
 import './globals.scss';
+import {AppProps} from "next/app";
 
 const inter = Inter({subsets: ['latin']});
 
@@ -20,10 +21,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
                                        children,
-                                   }: {
-    children: React.ReactNode;
-}) {
-
+                                   }: AppProps) {
 
     return (
         <html lang="ru">
