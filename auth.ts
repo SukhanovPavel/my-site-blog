@@ -24,7 +24,7 @@ import NextAuth from "next-auth"
 // import Fusionauth from "next-auth/providers/fusionauth"
 import GitHub from "next-auth/providers/github"
 // import Gitlab from "next-auth/providers/gitlab"
-// import Google from "next-auth/providers/google"
+import Google from "next-auth/providers/google"
 // import Hubspot from "next-auth/providers/hubspot"
 // import Instagram from "next-auth/providers/instagram"
 // import Kakao from "next-auth/providers/kakao"
@@ -54,7 +54,7 @@ import GitHub from "next-auth/providers/github"
 // import Twitch from "next-auth/providers/twitch"
 // import Twitter from "next-auth/providers/twitter"
 // import UnitedEffects from "next-auth/providers/united-effects"
-// import Vk from "next-auth/providers/vk"
+import Vk from "next-auth/providers/vk"
 // import Wikimedia from "next-auth/providers/wikimedia"
 // import Wordpress from "next-auth/providers/wordpress"
 // import WorkOS from "next-auth/providers/workos"
@@ -94,7 +94,7 @@ export const config = {
         // Fusionauth,
         GitHub,
         // Gitlab,
-        // Google,
+        Google,
         // Hubspot,
         // Instagram,
         // Kakao,
@@ -124,7 +124,7 @@ export const config = {
         // Twitch,
         // Twitter,
         // UnitedEffects,
-        // Vk,
+        Vk,
         // Wikimedia,
         // Wordpress,
         // WorkOS,

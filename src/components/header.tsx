@@ -33,7 +33,9 @@ const Header = async () => {
                     <SignOut />
                 </div>
                 :
-            <SignIn /> }
+                <a className="bg-gray-700 text-white" href="/api/auth/signin">Войти</a>
+            // <SignIn />
+            }
         </header>
     );
 };
