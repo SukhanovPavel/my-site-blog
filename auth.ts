@@ -54,7 +54,7 @@ import Google from "next-auth/providers/google"
 // import Twitch from "next-auth/providers/twitch"
 // import Twitter from "next-auth/providers/twitter"
 // import UnitedEffects from "next-auth/providers/united-effects"
-import Vk from "next-auth/providers/vk"
+// import Vk from "next-auth/providers/vk"
 // import Wikimedia from "next-auth/providers/wikimedia"
 // import Wordpress from "next-auth/providers/wordpress"
 // import WorkOS from "next-auth/providers/workos"
@@ -124,7 +124,7 @@ export const config = {
         // Twitch,
         // Twitter,
         // UnitedEffects,
-        Vk,
+        // Vk,
         // Wikimedia,
         // Wordpress,
         // WorkOS,
