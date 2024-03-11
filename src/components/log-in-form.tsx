@@ -1,22 +1,24 @@
 'use client'
-import {useContext, useEffect, useState, MouseEvent} from "react";
-import { CardHeader, CardContent, Card } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import {CreateNewUser} from "@/components/create-new-user";
-import {UserContext} from "@/contexts/UserContext";
-import LoggedUser from "@/components/logged-user";
-import {Spinner} from "@/components/spinner";
-import {auth} from "../../auth";
+import { MouseEvent, useContext, useEffect, useState } from 'react'
 
-import {signIn, signOut} from "next-auth/react";
+import { CreateNewUser } from '@/components/create-new-user'
+import LoggedUser from '@/components/logged-user'
+import { Spinner } from '@/components/spinner'
+import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { UserContext } from '@/contexts/UserContext'
+import Link from 'next/link'
+import { signIn, signOut } from 'next-auth/react'
 
-import '../app/globals.scss';
+import '../app/globals.scss'
 
-const gitHubIcon = <svg className="w-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
-  <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6
+import { auth } from '../../auth'
+
+const gitHubIcon = (
+  <svg className={'w-full'} viewBox={'0 0 496 512'} xmlns={'http://www.w3.org/2000/svg'}>
+    <path
+      d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6
   3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9
   2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9
   69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6
@@ -28,165 +30,190 @@ const gitHubIcon = <svg className="w-full" xmlns="http://www.w3.org/2000/svg" vi
   1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1
   3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2
   2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6
-  2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+    />
+  </svg>
+)
 
 export function LogInForm() {
+  const { setUser, user } = useContext(UserContext)
+  const [isOpen, setIsOpen] = useState(false)
+  const [newUserModal, setNewUserModal] = useState(false)
 
-  const {user, setUser} = useContext(UserContext);
-  const [isOpen, setIsOpen] = useState(false);
-  const [newUserModal, setNewUserModal] = useState(false);
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [loggedIn, setLoggedIn] = useState(false)
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [loggedIn, setLoggedIn] = useState(false);
-
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
-    const storedLoggedIn = localStorage.getItem('loggedIn');
+    const storedLoggedIn = localStorage.getItem('loggedIn')
+
     if (storedLoggedIn) {
-      setLoggedIn(true);
+      setLoggedIn(true)
     }
-    const storageId = localStorage.getItem('id') as string;
-    const storageUser = localStorage.getItem('user') as string;
-    const storageEmail = localStorage.getItem('email') as string;
-    const storageIsAdmin= localStorage.getItem('isAdmin') as string;
-    setUser({id: storageId,username: storageUser, email: storageEmail, isAdmin: storageIsAdmin === "true"});
-  }, []);
+    const storageId = localStorage.getItem('id') as string
+    const storageUser = localStorage.getItem('user') as string
+    const storageEmail = localStorage.getItem('email') as string
+    const storageIsAdmin = localStorage.getItem('isAdmin') as string
+
+    setUser({
+      email: storageEmail,
+      id: storageId,
+      isAdmin: storageIsAdmin === 'true',
+      username: storageUser,
+    })
+  }, [])
 
   const handleLogin = async (e: MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    setIsLoading(true);
+    e.preventDefault()
+    setIsLoading(true)
     // http://localhost:3000  https://www.web-hack.pro
     try {
       const response = await fetch(`/api/login?email=${email}&password=${password}`, {
-        method: 'GET',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
+        method: 'GET',
         // Можно добавить тело запроса, если это необходимо
         // body: JSON.stringify({ id, username, userEmail, password })
       })
 
       if (response.ok) {
         // Обработка успешного ответа
-        const data = await response.json();
-        const userFetch = data.userData;
+        const data = await response.json()
+        const userFetch = data.userData
 
-        setLoggedIn(true);
-        localStorage.setItem('loggedIn', 'true');
+        setLoggedIn(true)
+        localStorage.setItem('loggedIn', 'true')
 
-        setUser({id: userFetch.id.toString(), username: userFetch.username, email: userFetch.email, isAdmin: userFetch.isAdmin});
-        localStorage.setItem('id', userFetch.id.toString());
-        localStorage.setItem('user', userFetch.username);
-        localStorage.setItem('email', userFetch.email);
-        localStorage.setItem('isAdmin', userFetch.isAdmin.toString());
-        setIsOpen(false);
+        setUser({
+          email: userFetch.email,
+          id: userFetch.id.toString(),
+          isAdmin: userFetch.isAdmin,
+          username: userFetch.username,
+        })
+        localStorage.setItem('id', userFetch.id.toString())
+        localStorage.setItem('user', userFetch.username)
+        localStorage.setItem('email', userFetch.email)
+        localStorage.setItem('isAdmin', userFetch.isAdmin.toString())
+        setIsOpen(false)
       } else {
         // Обработка ошибки
-        const error = await response.json();
-        alert(error.message);
+        const error = await response.json()
+
+        alert(error.message)
       }
     } catch (error) {
       // Обработка сетевой ошибки
-      if(error && typeof error === 'object' && 'message' in error) {
-        alert("ooops! error: "+error.message)
-      } else alert('error ???')
+      if (error && typeof error === 'object' && 'message' in error) {
+        alert('ooops! error: ' + error.message)
+      } else {
+        alert('error ???')
+      }
     }
-    setIsLoading(false);
-  };
+    setIsLoading(false)
+  }
 
-  return<>
-    {isOpen ? !isLoading ?
-      <div className="fixed top-2 right-2 mx-auto max-w-md space-y-6 bg-gray-700 rounded-2xl">
-      <Card className="bg-inherit text-inherit">
-        <CardHeader>
-          <h2 className="text-2xl font-bold ml-8 mr-8">
-            {/*User Information*/}
-            Авторизуйтесь
-          </h2>
-        </CardHeader>
-        <CardContent>
-        {/*  <form className="space-y-4">*/}
-        {/*    <div className="space-y-2">*/}
-        {/*      <Label htmlFor="user-email">*/}
-        {/*        /!*User email*!/*/}
-        {/*        Емайл*/}
-        {/*      </Label>*/}
-        {/*      <Input*/}
-        {/*          id="user-email"*/}
-        {/*          placeholder="Enter your email"*/}
-        {/*          required*/}
-        {/*          value={email}*/}
-        {/*          onChange={(e) => setEmail(e.target.value)}*/}
-        {/*      />*/}
-        {/*    </div>*/}
-        {/*    <div className="space-y-2">*/}
-        {/*      <Label htmlFor="user-password">*/}
-        {/*        /!*Password*!/*/}
-        {/*        Пароль*/}
-        {/*      </Label>*/}
-        {/*      <Input*/}
-        {/*          id="user-password"*/}
-        {/*          placeholder="******"*/}
-        {/*          required*/}
-        {/*          type="password"*/}
-        {/*          value={password}*/}
-        {/*          onChange={(e) => setPassword(e.target.value)}*/}
-        {/*      />*/}
-        {/*    </div>*/}
-        {/*    <Button*/}
-        {/*        className="w-full"*/}
-        {/*        onClick={handleLogin}*/}
-        {/*        type="submit"*/}
-        {/*    >*/}
-        {/*      /!*Submit*!/*/}
-        {/*      Подтвердить*/}
-        {/*    </Button>*/}
-        {/*  </form>*/}
+  return (
+    <>
+      {isOpen ? (
+        !isLoading ? (
+          <div className={'fixed top-2 right-2 mx-auto max-w-md space-y-6 bg-gray-700 rounded-2xl'}>
+            <Card className={'bg-inherit text-inherit'}>
+              <CardHeader>
+                <h2 className={'text-2xl font-bold ml-8 mr-8'}>
+                  {/*User Information*/}
+                  Авторизуйтесь
+                </h2>
+              </CardHeader>
+              <CardContent>
+                {/*  <form className="space-y-4">*/}
+                {/*    <div className="space-y-2">*/}
+                {/*      <Label htmlFor="user-email">*/}
+                {/*        /!*User email*!/*/}
+                {/*        Емайл*/}
+                {/*      </Label>*/}
+                {/*      <Input*/}
+                {/*          id="user-email"*/}
+                {/*          placeholder="Enter your email"*/}
+                {/*          required*/}
+                {/*          value={email}*/}
+                {/*          onChange={(e) => setEmail(e.target.value)}*/}
+                {/*      />*/}
+                {/*    </div>*/}
+                {/*    <div className="space-y-2">*/}
+                {/*      <Label htmlFor="user-password">*/}
+                {/*        /!*Password*!/*/}
+                {/*        Пароль*/}
+                {/*      </Label>*/}
+                {/*      <Input*/}
+                {/*          id="user-password"*/}
+                {/*          placeholder="******"*/}
+                {/*          required*/}
+                {/*          type="password"*/}
+                {/*          value={password}*/}
+                {/*          onChange={(e) => setPassword(e.target.value)}*/}
+                {/*      />*/}
+                {/*    </div>*/}
+                {/*    <Button*/}
+                {/*        className="w-full"*/}
+                {/*        onClick={handleLogin}*/}
+                {/*        type="submit"*/}
+                {/*    >*/}
+                {/*      /!*Submit*!/*/}
+                {/*      Подтвердить*/}
+                {/*    </Button>*/}
+                {/*  </form>*/}
 
-          <CardContent>
-            <div>
-              <button
-                  className="flex flex-col items-center"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    signIn()
-                  }}
-              >
-                GitHub {<div className="w-8">{gitHubIcon}</div>}
-              </button>
-            </div>
-          </CardContent>
+                <CardContent>
+                  <div>
+                    <button
+                      className={'flex flex-col items-center'}
+                      onClick={e => {
+                        e.preventDefault()
+                        signIn()
+                      }}
+                    >
+                      GitHub {<div className={'w-8'}>{gitHubIcon}</div>}
+                    </button>
+                  </div>
+                </CardContent>
 
-          <CardContent>
-            {/*<Link href="#" onClick={() => setNewUserModal(true)}>*/}
-            {/*  /!*Registration*!/*/}
-            {/*  Регистрация*/}
-            {/*</Link>*/}
-          </CardContent>
-          <CardContent>
-            <Link href="#" onClick={() => setIsOpen(false)}>
-              {/*Close*/}
-              Закрыть
+                <CardContent>
+                  {/*<Link href="#" onClick={() => setNewUserModal(true)}>*/}
+                  {/*  /!*Registration*!/*/}
+                  {/*  Регистрация*/}
+                  {/*</Link>*/}
+                </CardContent>
+                <CardContent>
+                  <Link href={'#'} onClick={() => setIsOpen(false)}>
+                    {/*Close*/}
+                    Закрыть
+                  </Link>
+                </CardContent>
+              </CardContent>
+            </Card>
+          </div>
+        ) : (
+          <div className={'absolute bg-inherit right-10 flex items-center'}>
+            {/*Loading...   */}
+            Загрузка
+            <Spinner />
+          </div>
+        )
+      ) : (
+        <>
+          {!loggedIn && (
+            <Link className={'bg-gray-700 text-white'} href={'#'} onClick={() => setIsOpen(true)}>
+              {/*LogIn*/}
+              Логин
             </Link>
-          </CardContent>
-        </CardContent>
-      </Card>
-
-      </div>
-      :
-      <div className="absolute bg-inherit right-10 flex items-center">
-          {/*Loading...   */}
-        Загрузка
-        <Spinner/></div>
-      :
-        <>{!loggedIn && <Link className="bg-gray-700 text-white" href="#" onClick={() => setIsOpen(true)}>
-          {/*LogIn*/}
-          Логин
-        </Link>}</>
-    }
-    {newUserModal && <CreateNewUser handleClose={setNewUserModal}/>}
-    {loggedIn && <LoggedUser setLoggedIn={setLoggedIn}/>}
-  </>
+          )}
+        </>
+      )}
+      {newUserModal && <CreateNewUser handleClose={setNewUserModal} />}
+      {loggedIn && <LoggedUser setLoggedIn={setLoggedIn} />}
+    </>
+  )
 }

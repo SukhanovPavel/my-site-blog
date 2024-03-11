@@ -1,16 +1,15 @@
-import {Main} from "@/components/Main";
-import {Metadata} from "next";
+import { Main } from '@/components/Main'
+import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    title: 'Блог фронтенд разработчика о фронтенд разработке',
-    description: 'Главная. ',
-};
+  description: 'Главная. ',
+  title: 'Блог фронтенд разработчика о фронтенд разработке',
+}
 
 export default function Home() {
-
   return (
     <>
-        <Main />
+      <Main />
     </>
   )
 }

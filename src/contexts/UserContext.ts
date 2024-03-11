@@ -1,26 +1,25 @@
-import React from 'react';
+import React from 'react'
 
 export type User = {
-    id: string;
-    username: string;
-    email: string;
-    isAdmin: boolean;
-};
+  email: string
+  id: string
+  isAdmin: boolean
+  username: string
+}
 
 const user: User = {
-    id: "",
-    username: "",
-    email: "",
-    isAdmin: false,
+  email: '',
+  id: '',
+  isAdmin: false,
+  username: '',
 }
 
 type UserContextType = {
-    user: User;
-    setUser: (user: User) => void;
-};
-
+  setUser: (user: User) => void
+  user: User
+}
 
 export const UserContext = React.createContext<UserContextType>({
-    user,
-    setUser: (user: User) => {}
-});
+  setUser: (user: User) => {},
+  user,
+})
