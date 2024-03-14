@@ -1,8 +1,6 @@
 import React from 'react'
 
-import { LogInForm } from '@/components/log-in-form'
 import Menu from '@/components/menu'
-import SignIn from '@/components/signIn'
 import SignOut from '@/components/signOut'
 import { ToggleTheme } from '@/components/toggle-theme'
 import { Avatar } from '@/components/ui/avatar'

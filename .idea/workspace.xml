@@ -5,43 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14555689-617c-40e8-80f8-1ed85a13797b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.cjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/aboutPage/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/aboutPage/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/content/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/content/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/about.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/create-new-user.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/create-new-user.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/log-in-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/log-in-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/logged-user.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/logged-user.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/new-post.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/new-post.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/post-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/post-page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sessionData.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sessionData.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/signIn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/signIn.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/signOut.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/signOut.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/spinner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/spinner.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/toggle-theme.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/toggle-theme.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/avatar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/avatar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/badge.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/badge.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/input.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/label.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/label.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/navigation-menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/navigation-menu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/textarea.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/textarea.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contexts/ThemeContext.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/contexts/ThemeContext.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contexts/UserContext.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/contexts/UserContext.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/providers/ThemeProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/providers/ThemeProvider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/providers/UserProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/providers/UserProvider.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,9 +33,11 @@
     "last_opened_file_path": "/Users/pavelsuhanov/dev/my-site-blog",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
+    "node.js.detected.package.stylelint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.standard": "",
+    "node.js.selected.package.stylelint": "/Users/pavelsuhanov/dev/my-site-blog/node_modules/stylelint",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "/Users/pavelsuhanov/dev/my-site-blog/node_modules/prettier",
@@ -120,7 +88,9 @@
       <workItem from="1709497380794" duration="599000" />
       <workItem from="1709652891761" duration="598000" />
       <workItem from="1709661641653" duration="597000" />
-      <workItem from="1710134841991" duration="5562000" />
+      <workItem from="1710134841991" duration="7194000" />
+      <workItem from="1710395549761" duration="327000" />
+      <workItem from="1710396153867" duration="746000" />
     </task>
     <servers />
   </component>
