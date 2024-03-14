@@ -1,6 +1,5 @@
-import { auth } from "../../../auth";
+import { auth } from '../../../auth'
 
-export const POST =  auth((req) => {
-    // req.auth
-
+export const POST = auth(req => {
+  // req.auth
 })

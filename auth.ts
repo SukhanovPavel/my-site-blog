@@ -1,4 +1,4 @@
-import NextAuth from "next-auth"
+import NextAuth from 'next-auth'
 
 // import Apple from "next-auth/providers/apple"
 // import Atlassian from "next-auth/providers/atlassian"
@@ -22,9 +22,9 @@ import NextAuth from "next-auth"
 // import Foursquare from "next-auth/providers/foursquare"
 // import Freshbooks from "next-auth/providers/freshbooks"
 // import Fusionauth from "next-auth/providers/fusionauth"
-import GitHub from "next-auth/providers/github"
+import GitHub from 'next-auth/providers/github'
 // import Gitlab from "next-auth/providers/gitlab"
-import Google from "next-auth/providers/google"
+import Google from 'next-auth/providers/google'
 // import Hubspot from "next-auth/providers/hubspot"
 // import Instagram from "next-auth/providers/instagram"
 // import Kakao from "next-auth/providers/kakao"
@@ -54,7 +54,7 @@ import Google from "next-auth/providers/google"
 // import Twitch from "next-auth/providers/twitch"
 // import Twitter from "next-auth/providers/twitter"
 // import UnitedEffects from "next-auth/providers/united-effects"
-import Vk from "next-auth/providers/vk"
+// import Vk from "next-auth/providers/vk"
 // import Wikimedia from "next-auth/providers/wikimedia"
 // import Wordpress from "next-auth/providers/wordpress"
 // import WorkOS from "next-auth/providers/workos"
@@ -63,83 +63,87 @@ import Vk from "next-auth/providers/vk"
 // import Zoho from "next-auth/providers/zoho"
 // import Zoom from "next-auth/providers/zoom"
 
-import type { NextAuthConfig } from "next-auth"
+import type { NextAuthConfig } from 'next-auth'
 
 export const config = {
-    // theme: {
-    //     logo: "https://next-auth.js.org/img/logo/logo-sm.png",
-    // },
-    providers: [
-        // Apple,
-        // Atlassian,
-        // Auth0,
-        // Authentik,
-        // AzureAD,
-        // AzureB2C,
-        // Battlenet,
-        // Box,
-        // BoxyHQSAML,
-        // Bungie,
-        // Cognito,
-        // Coinbase,
-        // Discord,
-        // Dropbox,
-        // DuendeIDS6,
-        // Eveonline,
-        // Facebook,
-        // Faceit,
-        // FortyTwoSchool,
-        // Foursquare,
-        // Freshbooks,
-        // Fusionauth,
-        GitHub,
-        // Gitlab,
-        Google,
-        // Hubspot,
-        // Instagram,
-        // Kakao,
-        // Keycloak,
-        // Line,
-        // LinkedIn,
-        // Mailchimp,
-        // Mailru,
-        // Medium,
-        // Naver,
-        // Netlify,
-        // Okta,
-        // Onelogin,
-        // Osso,
-        // Osu,
-        // Passage,
-        // Patreon,
-        // Pinterest,
-        // Pipedrive,
-        // Reddit,
-        // Salesforce,
-        // Slack,
-        // Spotify,
-        // Strava,
-        // Todoist,
-        // Trakt,
-        // Twitch,
-        // Twitter,
-        // UnitedEffects,
-        Vk,
-        // Wikimedia,
-        // Wordpress,
-        // WorkOS,
-        // Yandex,
-        // Zitadel,
-        // Zoho,
-        // Zoom,
-    ],
-    callbacks: {
-        authorized({ request, auth }) {
-            const { pathname } = request.nextUrl
-            if (pathname === "/middleware-example") return !!auth
-            return true
-        },
+  // theme: {
+  //     logo: "https://next-auth.js.org/img/logo/logo-sm.png",
+  callbacks: {
+    authorized({ auth, request }) {
+      const { pathname } = request.nextUrl
+
+      if (pathname === '/middleware-example') {
+        return !!auth
+      }
+
+      return true
     },
+  },
+  // },
+  providers: [
+    // Apple,
+    // Atlassian,
+    // Auth0,
+    // Authentik,
+    // AzureAD,
+    // AzureB2C,
+    // Battlenet,
+    // Box,
+    // BoxyHQSAML,
+    // Bungie,
+    // Cognito,
+    // Coinbase,
+    // Discord,
+    // Dropbox,
+    // DuendeIDS6,
+    // Eveonline,
+    // Facebook,
+    // Faceit,
+    // FortyTwoSchool,
+    // Foursquare,
+    // Freshbooks,
+    // Fusionauth,
+    GitHub,
+    // Gitlab,
+    Google,
+    // Hubspot,
+    // Instagram,
+    // Kakao,
+    // Keycloak,
+    // Line,
+    // LinkedIn,
+    // Mailchimp,
+    // Mailru,
+    // Medium,
+    // Naver,
+    // Netlify,
+    // Okta,
+    // Onelogin,
+    // Osso,
+    // Osu,
+    // Passage,
+    // Patreon,
+    // Pinterest,
+    // Pipedrive,
+    // Reddit,
+    // Salesforce,
+    // Slack,
+    // Spotify,
+    // Strava,
+    // Todoist,
+    // Trakt,
+    // Twitch,
+    // Twitter,
+    // UnitedEffects,
+    // Vk,
+    // Wikimedia,
+    // Wordpress,
+    // WorkOS,
+    // Yandex,
+    // Zitadel,
+    // Zoho,
+    // Zoom,
+  ],
 } satisfies NextAuthConfig
 
-export const { handlers, auth } = NextAuth(config)
+export const { auth, handlers } = NextAuth(config)

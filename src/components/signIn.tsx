@@ -1,11 +1,14 @@
 'use client'
-import { signIn } from "next-auth/react";
-import Link from "next/link";
-import React, {useState} from "react";
-import {Card, CardContent, CardHeader} from "@/components/ui/card";
+import React, { useState } from 'react'
 
-const gitHubIcon = <svg className="w-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
-    <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6
+import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import Link from 'next/link'
+import { signIn } from 'next-auth/react'
+
+const gitHubIcon = (
+  <svg className={'w-full'} viewBox={'0 0 496 512'} xmlns={'http://www.w3.org/2000/svg'}>
+    <path
+      d={`M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6
   3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9
   2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9
   69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6
@@ -17,37 +20,46 @@ const gitHubIcon = <svg className="w-full" xmlns="http://www.w3.org/2000/svg" vi
   1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1
   3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2
   2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6
-  2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z`}
+    />
+  </svg>
+)
 
 export default function SignIn() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    return (
-        <>
-            <Link className="bg-gray-700 text-white" href="#" onClick={() => setIsModalOpen(true)}>Войти</Link>
-            {isModalOpen &&
-                <div
-                    onClick={(e) => e.target === e.currentTarget && setIsModalOpen(false)}
-                    className="fixed top-0 left-0 flex items-center justify-center w-full h-full bg-gray-900/50"
+  return (
+    <>
+      <Link className={'bg-gray-700 text-white'} href={'#'} onClick={() => setIsModalOpen(true)}>
+        Войти
+      </Link>
+      {isModalOpen && (
+        <div
+          className={
+            'fixed top-0 left-0 flex items-center justify-center w-full h-full bg-gray-900/50'
+          }
+          onClick={e => e.target === e.currentTarget && setIsModalOpen(false)}
+        >
+          <Card className={'lap:w-1/3 mob:w-full h-1/2 text-center'}>
+            <CardHeader>
+              <h2 className={'text-2xl'}>Авторизуйтесь</h2>
+            </CardHeader>
+            <CardContent>
+              <div>
+                <button
+                  className={'flex flex-col items-center'}
+                  onClick={e => {
+                    e.preventDefault()
+                    signIn()
+                  }}
                 >
-                <Card className="lap:w-1/3 mob:w-full h-1/2 text-center">
-                    <CardHeader><h2 className="text-2xl">Авторизуйтесь</h2></CardHeader>
-                    <CardContent>
-                        <div>
-                            <button
-                                className="flex flex-col items-center"
-                                onClick={(e) => {
-                                    e.preventDefault()
-                                    signIn()
-                                }}
-                            >
-                                GitHub {<div className="w-8">{gitHubIcon}</div>}
-                            </button>
-                        </div>
-                    </CardContent>
-                </Card>
-            </div>}
-        </>
-    )
+                  GitHub {<div className={'w-8'}>{gitHubIcon}</div>}
+                </button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      )}
+    </>
+  )
 }

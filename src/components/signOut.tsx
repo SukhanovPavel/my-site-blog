@@ -1,14 +1,22 @@
 'use client'
-import React from 'react';
-import {signOut} from "next-auth/react";
+import React from 'react'
+
+import { signOut } from 'next-auth/react'
 
 const SignOut = () => {
-    return (
+  return (
+    <div>
+      <button
+        className={'bg-gray-700 text-white'}
+        onClick={e => {
+          e.preventDefault()
+          signOut()
+        }}
+      >
+        Выйти
+      </button>
+    </div>
+  )
+}
 
-        <div>
-            <button className="bg-gray-700 text-white" onClick={(e) => {e.preventDefault(); signOut()}}>Выйти</button>
-        </div>
-    );
-};
-
-export default SignOut;
+export default SignOut
