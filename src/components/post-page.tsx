@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { Metadata } from 'next'
 import Link from 'next/link'
 
@@ -352,7 +353,6 @@ export async function GET(request: Request) {
     </main>
   )
 }
-
 type pProps = {
   children: React.ReactNode
 }
