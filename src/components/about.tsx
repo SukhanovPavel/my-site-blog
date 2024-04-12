@@ -24,10 +24,17 @@ export function About() {
             </h2>
             <p>
               Фронтенд разработчик с опытом работы в индустрии компьютерного программного
-              обеспечения. Специалист в области разработки веб приложений, стек React/Next,
-              Redux/Effector.
+              обеспечения. Специалист в области разработки веб приложений, стек React/Next, Redux
+              toolkit/ RTK query, Typescript.
               {/*A frontend developer with experience in the computer software industry.*/}
               {/*Specialist in the field of web application development, React/Next stack, Redux/Effector.*/}
+            </p>
+
+            <p>
+              Сейчас работаю в команде из 5 фронтенд разработчиков, 1 бэк и 2 тестировщика на
+              стартапом Picthentic(Социальная сеть). Стек next js, typescript, redux toolkit, redux
+              toolkit query, scss, storybook, react-hook-form, zod, axios, radix, jenkins,
+              kubernetes.
             </p>
             <p>
               Мои работы:
@@ -46,10 +53,9 @@ export function About() {
             </p>
             <p>
               <Link href={'https://vysota.vercel.app/'} id={'textLink'} target={'_blank'}>
-                vysota.vercel.app
+                высота-шатура.рф
               </Link>{' '}
-              - сайт запустится в ближайшее время на домене компании. В данный момент занимаюсь
-              оптимизацией загрузки изображений и наполнением контента.
+              - в данный момент занимаюсь оптимизацией загрузки изображений и наполнением контента.
             </p>
             <p>
               <Link href={'https://www.web-hack.pro'} id={'textLink'} target={'_blank'}>

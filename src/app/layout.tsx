@@ -64,7 +64,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   </CardHeader>
                   <Link href={'aboutPage'}>
                     <CardContent className={'flex flex-col gap-4'}>
-                      <Avatar />
+                      {/*<Avatar />*/}
                       <p>
                         {/*Hi, I m a frontend developer. This is my blog where I write about various topics*/}
                         {/*that interest me.*/}Это мой блог о фронтенд-разработке, где я пишу на
