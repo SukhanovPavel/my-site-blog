@@ -4,12 +4,10 @@ import React from 'react'
 
 import Footer from '@/components/footer'
 import Header from '@/components/header'
-import { Avatar } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import ThemeProvider from '@/providers/ThemeProvider'
 import UserProvider from '@/providers/UserProvider'
-import { AppProps } from 'next/app'
 import { Inter } from 'next/font/google'
 import Link from 'next/link'
 
@@ -56,30 +54,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <aside className={'lap:w-80 space-y-4 px-2 mob:hidden lap:block'}>
                 <Card className={'w-full'}>
                   <CardHeader>
-                    <h2 className={'text-xl font-bold'}>
-                      {/*About Me*/}
-                      {/*Обо мне*/}
-                      Привет!
-                    </h2>
+                    <h2 className={'text-xl font-bold'}>Привет!</h2>
                   </CardHeader>
                   <Link href={'aboutPage'}>
                     <CardContent className={'flex flex-col gap-4'}>
-                      {/*<Avatar />*/}
                       <p>
-                        {/*Hi, I m a frontend developer. This is my blog where I write about various topics*/}
-                        {/*that interest me.*/}Это мой блог о фронтенд-разработке, где я пишу на
-                        различные темы. Всё, чем сейчас занимаюсь и изучаю постараюсь записывать
-                        здесь. Надеюсь пригодится)
+                        Это мой блог о фронтенд-разработке, где я пишу на различные темы. Всё, чем
+                        сейчас занимаюсь и изучаю постараюсь записывать здесь. Надеюсь пригодится)
                       </p>
                     </CardContent>
                   </Link>
                 </Card>
                 <Card>
                   <CardHeader>
-                    <h2 className={'text-xl font-bold'}>
-                      {/*Categories*/}
-                      Категории
-                    </h2>
+                    <h2 className={'text-xl font-bold'}>Категории</h2>
                   </CardHeader>
                   <CardContent>
                     <Link href={'https://nextjs.org/'} id={'textLink'} target={'_blank'}>
